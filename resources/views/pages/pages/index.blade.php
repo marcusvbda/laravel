@@ -6,10 +6,10 @@
   <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
     <span class="text-uppercase page-subtitle">Template</span>
     <h3 class="page-title">
-        <i class="fas fa-bolt"></i> Páginas do site
+        <span class="mr-2"><i class="fas fa-bolt"></i> Páginas do site</span>
         <a  href="{{ route('paginas.create') }}">
             <button type="button" class="mb-2 btn btn-sm btn-royal-blue mr-1">
-                <i class="fa fa-plus"></i> Adicionar nova página
+                <i class="fa fa-plus"></i> Adicionar nova
             </button>
         </a>
     </h3>
@@ -47,30 +47,33 @@
 
                     <form method="GET" action="">
                         @csrf
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend" title="Ordernar por...">
+                        <div class="row">
+                            <div class="col-2">
+                                <label>Ordenar por...</label>
                                 <select class="custom-select" name="order_name">
-                                    <optgroup label="Ordenar por...">
-                                        <option @if($filter["order_name"]=="id") selected @endif value="id">id</option>
-                                        <option @if($filter["order_name"]=="name") selected @endif value="name">nome</option>
-                                        <option @if($filter["order_name"]=="slug") selected @endif  value="slug">Slug text</option>
-                                    </optgroup>
+                                    <option @if($filter["order_name"]=="id") selected @endif value="id">id</option>
+                                    <option @if($filter["order_name"]=="name") selected @endif value="name">nome</option>
+                                    <option @if($filter["order_name"]=="slug") selected @endif  value="slug">Slug text</option>
                                 </select>
                             </div>
-                            <div class="input-group-prepend" title="Tipo da ordenação">
+                            <div class="col-2">
+                                <label>Tipo da ordenação</label>
                                 <select class="custom-select" name="order_type">
-                                    <optgroup label="Ordenação">
-                                        <option @if($filter["order_type"]=="DESC") selected @endif value="DESC">Descendente</option>
-                                        <option @if($filter["order_type"]=="ASC") selected @endif value="ASC">Ascendente</option>
-                                    </optgroup>
+                                    <option @if($filter["order_type"]=="DESC") selected @endif value="DESC">Descendente</option>
+                                    <option @if($filter["order_type"]=="ASC") selected @endif value="ASC">Ascendente</option>
                                 </select>
                             </div>
-                            <input type="text" class="form-control" aria-label="Text input with dropdown button" value="{{ $filter["filter"] }}" placeholder="Filtro contendo ..." name="filter">
-                            <div class="input-group-append">
-                                <button type="submit" class="btn btn-white" type="button">
-                                    <i class="fa fa-search"></i>
-                                    Buscar
-                                </button>
+                            <div class="col-8">
+                                <label>Filtro contendo...</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" aria-label="Text input with dropdown button" value="{{ $filter["filter"] }}" name="filter">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-white" type="button">
+                                            <i class="fa fa-search"></i>
+                                            Buscar
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </form>

@@ -18,7 +18,7 @@ mix.js('resources/js/backend.js', 'public/backend/js')
    	.extract(
     [
         'jquery',
-        'vue',
+        'vue'
     ]).autoload(
     {
         jquery: ['$', 'window.jQuery', 'jQuery'],

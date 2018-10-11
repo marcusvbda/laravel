@@ -14,7 +14,8 @@ class CreatePage extends FormRequest
     public function rules()
     {
         return [
-            'name'     => 'bail|required'
+            'name'     => 'bail|required',
+            'title'    => 'bail|required'
         ];
     }
     
@@ -22,6 +23,7 @@ class CreatePage extends FormRequest
     {
         return [
             'name.required' => "O nome é obrigatório.",
+            'title.required' => "O título é obrigatório.",
         ];
     }
 }

@@ -14,6 +14,8 @@ class Pages extends Migration
             $table->collation = 'utf8_unicode_ci';
             $table->increments('id');
             $table->string('name',100);
+            $table->string('title',100);
+            $table->longtext('content')->nullable();
             $table->string('slug',150); 
             $table->string('status',1)->default("A");
             $table->softDeletes();

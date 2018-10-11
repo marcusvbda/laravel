@@ -1,4 +1,5 @@
 import $ from 'jquery';
 import vue from 'vue';
-window.swal = require('sweetalert2');
+import summernote from 'summernote';
+window.summernote = summernote;
 window.Vue = vue;

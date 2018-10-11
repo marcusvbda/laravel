@@ -17,7 +17,7 @@
                 <span aria-hidden="true">×</span>
             </button>
             <i class="fa fa-check mx-2"></i>
-            A página <strong> {{ session('page')->name }} </strong> foi altualizada com sucesso.
+            A página <strong> {{ session('page')->name }} </strong> foi atualizada com sucesso.
         </div>
     @endif
 @endsection
@@ -40,50 +40,69 @@
 <form method="POST" action="">
     @csrf
     <div class="row">
-        <div class="col-lg-9 col-md-12">
+        <div class="col-9">
             <div class="card card-small mb-3">
                 <div class="card-body">
-                    <form class="add-new-post">
-                        <div class="form-group row">
-                            <label for="exhibition_name" class="col-sm-2 col-form-label">Nome</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" name="name" type="text" id="exhibition_name" value="{{ $page->name }}">
-                            </div>
+                    
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Nome</label>
+                        <div class="col-10">
+                            <input class="form-control" name="name" placeholder="Nome da página..."  type="text" value="{{ $page->name }}">
                         </div>
-                    </form>
+                    </div>
+                    <div class="form-group row">
+                        <label  class="col-2 col-form-label">Título</label>
+                        <div class="col-10">
+                            <input class="form-control" name="title" type="text"  value="{{ $page->title }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <textarea style="display:none;" name="content" id="content">
+                                {!! $page->content !!}
+                            </textarea>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-12">
-        <!-- Post Overview -->
-        <div class="card card-small mb-3">
-            <div class="card-header border-bottom">
-            <h6 class="m-0">Ações</h6>
-            </div>
-            <div class="card-body p-0">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item d-flex px-3">
-                    <div class="input-group mb-3">
-                      <div class="input-group-prepend">
-                        <label class="input-group-text" for="customSelect01">Status</label>
-                      </div>
-                      <select class="custom-select" id="customSelect01" name="status">
-                        <option value="A" @if( $page->status == "A") selected @endif>Ativa</option>
-                        <option value="I" @if( $page->status == "I") selected @endif>Inativa</option>
-                      </select>
+        <div class="col-3">
+            <div class="card card-small mb-3">
+                <div class="card-header border-bottom p-2">
+                    <h6 class="m-0">Extras</h6>
+                </div>
+                <div class="row p-2">
+                    <div class="col-12">
+                        <small><i class="fas fa-globe"></i> <a title="Acessar página" href="{{ asset($page->slug) }}" target="_blank">{{ asset($page->slug) }}</a></small>
                     </div>
-                </li>
-                <li class="list-group-item d-flex px-3">
-                    <a  href="#" data-toggle="modal" data-target="#deleteModal">
-                        <button type="button" type="button" class="btn btn-sm btn-outline-danger ml-auto">
-                            Excluir
-                        </button>
-                    </a>
-                    <button type="submit" class="btn btn-sm btn-royal-blue ml-auto"><i class="material-icons">file_copy</i> Alterar</button>
-                </li>
-            </ul>
+                </div>
+                <div class="row p-2">
+                    <div class="col-12">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="customSelect01">Status</label>
+                            </div>
+                            <select class="custom-select" id="customSelect01" name="status">
+                                <option value="A" @if( $page->status == "A") selected @endif>Ativa</option>
+                                <option value="I" @if( $page->status == "I") selected @endif>Inativa</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <hr class="m-2">
+                <div class="card-body p-0">
+                    <div class="row p-2">
+                        <div class="col-12">
+                            <a  href="#" data-toggle="modal" data-target="#deleteModal">
+                                <button type="button" type="button" class="btn btn-sm btn-outline-danger ml-auto">
+                                    Excluir
+                                </button>
+                            </a>
+                            <button type="submit" class="btn btn-sm btn-royal-blue float-right"><i class="material-icons">file_copy</i> Alterar</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
     </div>
 </form>
@@ -98,7 +117,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				A págide do site <b>{{ $page->name }}</b> será excluida.
+				A página do site <b>{{ $page->name }}</b> será excluida.
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -114,5 +133,10 @@
 @section('scripts')
 <script>
     document.getElementById("menuPaginas").classList.add('active');
+    $("#content").summernote(
+    {
+        height: 300,
+        popover: {}
+    });
 </script>
 @endsection

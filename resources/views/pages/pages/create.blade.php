@@ -31,52 +31,77 @@
 <form method="POST" action="">
     @csrf
     <div class="row">
-        <div class="col-lg-9 col-md-12">
+        <div class="col-9">
             <div class="card card-small mb-3">
                 <div class="card-body">
-                    <form class="add-new-post">
-                        <div class="form-group row">
-                            <label for="exhibition_name" class="col-sm-2 col-form-label">Nome</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" name="name" type="text" id="exhibition_name" value="{{ old('name') }}">
-                            </div>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Nome</label>
+                        <div class="col-10">
+                            <input class="form-control" name="name" placeholder="Nome da página..." type="text" value="{{ old('name') }}">
                         </div>
-                    </form>
+                    </div>
+                    <div class="form-group row">
+                        <label  class="col-2 col-form-label">Título</label>
+                        <div class="col-10">
+                            <input class="form-control" name="title" type="text" placeholder="Título da página..." value="{{ old('title') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <textarea style="display:none;" name="content" id="content">
+                                {{ old('content') }}
+                            </textarea>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-12">
-        <!-- Post Overview -->
-        <div class="card card-small mb-3">
-            <div class="card-header border-bottom">
-            <h6 class="m-0">Ações</h6>
-            </div>
-            <div class="card-body p-0">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item d-flex px-3">
-                    <div class="input-group mb-3">
-                      <div class="input-group-prepend">
-                        <label class="input-group-text" for="customSelect01">Status</label>
-                      </div>
-                      <select class="custom-select" id="customSelect01" name="status">
-                        <option value="A" selected>Ativa</option>
-                        <option value="I">Inativa</option>
-                      </select>
+        <div class="col-3">
+            <div class="card card-small mb-3">
+                <div class="card-header border-bottom p-2">
+                    <h6 class="m-0">Extras</h6>
+                </div>
+                <div class="row p-2">
+                    <div class="col-12">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="customSelect01">Status</label>
+                            </div>
+                            <select class="custom-select" id="customSelect01" name="status">
+                                <option value="A" selected>Ativa</option>
+                                <option value="I">Inativa</option>
+                            </select>
+                        </div>
                     </div>
-                </li>
-                <li class="list-group-item d-flex px-3">
-                    <button type="submit" class="btn btn-sm btn-royal-blue ml-auto"><i class="material-icons">file_copy</i> Salvar</button>
-                </li>
-            </ul>
+                </div>
+                <hr class="m-2">
+                <div class="card-body p-0">
+                    <div class="row p-2">
+                        <div class="col-12">
+                            <a  href="#" data-toggle="modal" data-target="#deleteModal">
+                                <button type="button" type="button" class="btn btn-sm btn-outline-danger ml-auto">
+                                    Excluir
+                                </button>
+                            </a>
+                            <button type="submit" class="btn btn-sm btn-royal-blue float-right"><i class="material-icons">file_copy</i> Salvar</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
     </div>
 </form>
 @endsection
 
 @section('scripts')
+
 <script>
     document.getElementById("menuPaginas").classList.add('active');
+    $("#content").summernote(
+    {
+        placeholder : "O conteudo da página aqui...",
+        height: 300,
+        popover: {},
+    });
 </script>
 @endsection
