@@ -15,6 +15,7 @@
   <div id="app">
     @yield('content')
   </div>
-    @include('layouts.footer-script')
 </body>
+@include('layouts.footer')
 </html>
+@section("scripts")

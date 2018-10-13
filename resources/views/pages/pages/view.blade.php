@@ -93,7 +93,7 @@
                 <div class="card-body p-0">
                     <div class="row p-2">
                         <div class="col-12">
-                            <a  href="#" data-toggle="modal" data-target="#deleteModal">
+                        <a  href="#" onclick="destroy('{{ route('paginas.deactivate', ['slug' => $page->slug]) }}', '{{ $page->name }}')">
                                 <button type="button" type="button" class="btn btn-sm btn-outline-danger ml-auto">
                                     Excluir
                                 </button>
@@ -107,27 +107,6 @@
     </div>
 </form>
 
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Tem certeza que deseja excluir ?</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				A página do site <b>{{ $page->name }}</b> será excluida.
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-				<a href="{{ route('paginas.deactivate', [
-					'slug' => $page->slug
-				]) }}" class="btn btn-danger">Excluir página do site</a>
-			</div>
-		</div>
-	</div>
-</div>
 @endsection
 
 @section('scripts')
@@ -138,5 +117,13 @@
         height: 300,
         popover: {}
     });
+
+    function destroy(url, page)
+    {
+        helper.confirm("Confirmação","Deseja mesmo excluir a página "+page+" ?","warning",function()
+        {
+            return window.location.href = url;
+        });
+    }
 </script>
 @endsection

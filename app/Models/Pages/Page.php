@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes; 
-use Cviebrock\EloquentSluggable\Sluggable;
-use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
+use Cviebrock\EloquentSluggable\{Sluggable,SluggableScopeHelpers};
+use Cviebrock\EloquentSluggable\Services\SlugService;
+
 
 class Page extends Model
 {
@@ -18,6 +19,12 @@ class Page extends Model
 		'content',
 		'status'
 	];
+
+	public function setNameAttribute($value)
+    {
+		$this->attributes['name'] = $value;
+		$this->attributes['slug'] = SlugService::createSlug($this, 'slug', $value);
+	}
 
 	public function sluggable()
     {

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\{Page};
 use Illuminate\Http\Request;
 use App\Http\Requests\CreatePage;
-use Cviebrock\EloquentSluggable\Services\SlugService;
+use App\Services\AlertService;
 
 class PagesController extends Controller
 {
@@ -32,10 +32,9 @@ class PagesController extends Controller
     public function store(CreatePage $request)
     {
         $page = $request->all();
-        $page["slug"] = SlugService::createSlug(Page::class, 'slug', $page['name']);
         $page = Page::create($page);
-        $added = true;
-        return redirect(route('paginas.index'))->with(compact('added','page'));
+        $alert = AlertService::flash('success', '<strong>Pronto!</strong> Página '.$page->name.' foi adicionada com sucesso.');
+        return redirect(route('paginas.index'))->with(compact('page'));
     }
 
     public function show(Request $request,Page $page)
@@ -46,9 +45,9 @@ class PagesController extends Controller
     public function update(Request $request, Page $page)
     {
         $data = $request->all();
-        $data["slug"] = SlugService::createSlug(Page::class, 'slug', $data['name']);
-        $updated = $page->update($data);
-        return redirect(route('paginas.show',['slug' => $page->slug]))->with(compact('updated','page'));
+        $page->update($data);
+        $alert = AlertService::flash('success', '<strong>Pronto!</strong> Página '.$page->name.' foi atualizada com sucesso.');
+        return redirect(route('paginas.show',['slug' => $page->slug]));
     }
 
     public function destroy(Page $page)
@@ -57,8 +56,9 @@ class PagesController extends Controller
         {
             abort(404);
         }
-        $deleted = $page->delete();
-        return redirect(route('paginas.index'))->with(compact('deleted','page'));
+        $page->delete();
+        $alert = AlertService::flash('success', '<strong>Pronto!</strong> Página '.$page->name.' foi excluida com sucesso.');
+        return redirect(route('paginas.index'));
     }
 
 }

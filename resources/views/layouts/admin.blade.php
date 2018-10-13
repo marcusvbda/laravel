@@ -1,8 +1,5 @@
 @extends('layouts.empty')
 
-@section('breadcrumb')
-@endsection
-
 @section('content')
   <body class="h-100">
     <div class="container-fluid">
@@ -116,7 +113,7 @@
                         <a class="dropdown-item" href="add-new-post.html">
                         <i class="material-icons">note_add</i> Add New Post</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item text-danger" href="#" data-toggle="modal" data-target="#logoutModal">
+                        <a class="dropdown-item text-danger" onclick="logout()">
                         <i class="material-icons text-danger"></i> Logout </a>
                     </div>
                     </li>
@@ -128,7 +125,7 @@
                 </nav>
                 </nav>
             </div>
-            @yield('messages')
+            @include('layouts.alerts')
             <div class="main-content-container container-fluid px-4">
                 <!-- Page Header -->
                 @yield('breadcrumb')
@@ -145,24 +142,14 @@
       </div>
     </div>
   </body>
-
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Confirmação</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Deseja mesmo sair ?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <a href="{{ route('logout') }}" class="btn btn-danger">Efetuar logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection
+
+<script>
+function logout()
+{
+    helper.confirm("Confirmação","Deseja mesmo efetuar o logout? ","warning",function()
+    {
+        return window.location.href = "{{ route('logout') }}";
+    });
+}
+</script>

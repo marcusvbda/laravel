@@ -79,7 +79,6 @@
   </div>
 </div>
 @endsection
-
 @section('scripts')
 <script>
     document.getElementById("menuDashboard").classList.add('active');
