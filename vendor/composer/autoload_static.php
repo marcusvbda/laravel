@@ -26,6 +26,10 @@ class ComposerStaticInit56ccb67183560e7a9c3418fcc7ef5170
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'm' => 
+        array (
+            'marcusvbda\\uploader\\' => 20,
+        ),
         'X' => 
         array (
             'XdgBaseDir\\' => 11,
@@ -133,6 +137,10 @@ class ComposerStaticInit56ccb67183560e7a9c3418fcc7ef5170
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'marcusvbda\\uploader\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/marcusvbda/uploader/src',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -383,6 +391,7 @@ class ComposerStaticInit56ccb67183560e7a9c3418fcc7ef5170
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Services\\AlertService' => __DIR__ . '/../..' . '/app/services/AlertService.php',
+        'App\\Teste' => __DIR__ . '/../..' . '/app/Models/Teste.php',
         'BeyondCode\\DumpServer\\DumpServerCommand' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',
         'BeyondCode\\DumpServer\\DumpServerServiceProvider' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerServiceProvider.php',
         'BeyondCode\\DumpServer\\Dumper' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/Dumper.php',
@@ -976,6 +985,7 @@ class ComposerStaticInit56ccb67183560e7a9c3418fcc7ef5170
         'Faker\\ValidGenerator' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/ValidGenerator.php',
         'Fideloper\\Proxy\\TrustProxies' => __DIR__ . '/..' . '/fideloper/proxy/src/TrustProxies.php',
         'Fideloper\\Proxy\\TrustedProxyServiceProvider' => __DIR__ . '/..' . '/fideloper/proxy/src/TrustedProxyServiceProvider.php',
+        'Files' => __DIR__ . '/..' . '/marcusvbda/uploader/src/migrations/2018_10_15_183528_files.php',
         'Hamcrest\\Arrays\\IsArray' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
         'Hamcrest\\Arrays\\IsArrayContaining' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
         'Hamcrest\\Arrays\\IsArrayContainingInAnyOrder' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingInAnyOrder.php',
@@ -3152,6 +3162,7 @@ class ComposerStaticInit56ccb67183560e7a9c3418fcc7ef5170
         'Spatie\\Permission\\Guard' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Guard.php',
         'Spatie\\Permission\\Middlewares\\PermissionMiddleware' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Middlewares/PermissionMiddleware.php',
         'Spatie\\Permission\\Middlewares\\RoleMiddleware' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Middlewares/RoleMiddleware.php',
+        'Spatie\\Permission\\Middlewares\\RoleOrPermissionMiddleware' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Middlewares/RoleOrPermissionMiddleware.php',
         'Spatie\\Permission\\Models\\Permission' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Models/Permission.php',
         'Spatie\\Permission\\Models\\Role' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Models/Role.php',
         'Spatie\\Permission\\PermissionRegistrar' => __DIR__ . '/..' . '/spatie/laravel-permission/src/PermissionRegistrar.php',
@@ -3769,6 +3780,11 @@ class ComposerStaticInit56ccb67183560e7a9c3418fcc7ef5170
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
+        'marcusvbda\\uploader\\Controllers\\UploaderController' => __DIR__ . '/..' . '/marcusvbda/uploader/src/Controllers/UploaderController.php',
+        'marcusvbda\\uploader\\Models\\File' => __DIR__ . '/..' . '/marcusvbda/uploader/src/Models/File.php',
+        'marcusvbda\\uploader\\Models\\FileRelations' => __DIR__ . '/..' . '/marcusvbda/uploader/src/Models/FileRelation.php',
+        'marcusvbda\\uploader\\Traits\\HasFiles' => __DIR__ . '/..' . '/marcusvbda/uploader/src/Traits/HasFiles.php',
+        'marcusvbda\\uploader\\UploaderServiceProvider' => __DIR__ . '/..' . '/marcusvbda/uploader/src/UploaderServiceProvider.php',
         'pagesSeed' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',

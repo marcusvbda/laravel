@@ -1175,6 +1175,46 @@
         ]
     },
     {
+        "name": "marcusvbda/uploader",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/marcusvbda/fileuploader.git",
+            "reference": "e38a185359b72c5c9f9a7b476cef8a8dc2bc6b17"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/marcusvbda/fileuploader/zipball/e38a185359b72c5c9f9a7b476cef8a8dc2bc6b17",
+            "reference": "e38a185359b72c5c9f9a7b476cef8a8dc2bc6b17",
+            "shasum": ""
+        },
+        "require": {
+            "cviebrock/eloquent-sluggable": "^4.6"
+        },
+        "time": "2018-10-15T21:19:44+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "src/migrations"
+            ],
+            "psr-4": {
+                "marcusvbda\\uploader\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Marcus Vinicius Bassalobre de Assis",
+                "email": "vinicius.bda@icloud.com"
+            }
+        ]
+    },
+    {
         "name": "mockery/mockery",
         "version": "1.2.0",
         "version_normalized": "1.2.0.0",

@@ -159,6 +159,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        marcusvbda\uploader\UploaderServiceProvider::class,
 
         /*
          * Package Service Providers...
