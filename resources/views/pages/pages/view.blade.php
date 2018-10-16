@@ -111,7 +111,7 @@
 
 @section('scripts')
 <script>
-    document.getElementById("menuPaginas").classList.add('active');
+    $("#menuPaginas").addClass("active");
     $("#content").summernote(
     {
         height: 300,

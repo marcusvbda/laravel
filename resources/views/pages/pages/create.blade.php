@@ -78,11 +78,6 @@
                 <div class="card-body p-0">
                     <div class="row p-2">
                         <div class="col-12">
-                            <a  href="#" data-toggle="modal" data-target="#deleteModal">
-                                <button type="button" type="button" class="btn btn-sm btn-outline-danger ml-auto">
-                                    Excluir
-                                </button>
-                            </a>
                             <button type="submit" class="btn btn-sm btn-royal-blue float-right"><i class="material-icons">file_copy</i> Salvar</button>
                         </div>
                     </div>
@@ -94,9 +89,8 @@
 @endsection
 
 @section('scripts')
-
 <script>
-    document.getElementById("menuPaginas").classList.add('active');
+    $("#menuPaginas").addClass("active");
     $("#content").summernote(
     {
         placeholder : "O conteudo da página aqui...",

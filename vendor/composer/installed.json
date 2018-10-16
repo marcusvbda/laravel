@@ -1181,18 +1181,18 @@
         "source": {
             "type": "git",
             "url": "https://github.com/marcusvbda/fileuploader.git",
-            "reference": "e38a185359b72c5c9f9a7b476cef8a8dc2bc6b17"
+            "reference": "c6559e945d4196f372e355d9ddfb893c45505cd1"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/marcusvbda/fileuploader/zipball/e38a185359b72c5c9f9a7b476cef8a8dc2bc6b17",
-            "reference": "e38a185359b72c5c9f9a7b476cef8a8dc2bc6b17",
+            "url": "https://api.github.com/repos/marcusvbda/fileuploader/zipball/c6559e945d4196f372e355d9ddfb893c45505cd1",
+            "reference": "c6559e945d4196f372e355d9ddfb893c45505cd1",
             "shasum": ""
         },
         "require": {
             "cviebrock/eloquent-sluggable": "^4.6"
         },
-        "time": "2018-10-15T21:19:44+00:00",
+        "time": "2018-10-15T21:44:52+00:00",
         "type": "library",
         "installation-source": "source",
         "autoload": {

@@ -1,26 +1,25 @@
 var helper = 
 {
-    confirm : (title,text,type,action,buttons = ['Cancelar','Confirmar']) =>
+    confirm : (title,text,type,action) =>
     {
         swal({
             title: title,
             text: text,
             type: type,
-            buttons: true,
             showCancelButton: true,
             focusConfirm: true,
             buttons: 
             {
                 cancel: 
                 {
-                    text: buttons[0],
+                    text: "Cancelar",
                     value: false,
                     visible: true,
                     closeModal: true,
                 },
                 confirm: 
                 {
-                    text: buttons[1],
+                    text: "Confirmar",
                     value: true,
                     visible: true,
                     closeModal: true,
