@@ -4,6 +4,9 @@ Route::get('/',function(){
   // echo "frontend";
 });
 
+Route::get('/testes', 'TesteController@index')->name('testes.index');
+Route::post('/uploadTeste', 'TesteController@uploadImage')->name('testes.upload');
+
 Route::group(['prefix' => 'admin'], function () 
 {
   require("partials/auth.php");

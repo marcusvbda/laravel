@@ -8,7 +8,6 @@
                         <h6 class="stats-small__value count my-3">{{ value }}</h6>
                     </div>
                 </div>
-                <canvas height="120" class="blog-overview-stats-small-1"></canvas>
             </div>
         </div>
     </div>

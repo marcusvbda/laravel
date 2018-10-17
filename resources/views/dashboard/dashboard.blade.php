@@ -14,6 +14,26 @@
 @section('body')
 
 
+{{-- <table-component>
+    <table-thead>
+        <tr>
+            <th>Coluna</th>
+            <th>Coluna</th>
+            <th>Coluna</th>
+            <th>Coluna</th>
+        </tr>
+    </table-thead>
+    <table-tbody>
+        <tr>
+            <td>Coluna</td>
+            <td>Coluna</td>
+            <td>Coluna</td>
+            <td>Coluna</td>
+        </tr>
+    </table-tbody>
+</table-component> --}}
+
+ 
 <div class="row">
     <square-overview title="Posts" value="2,390"></square-overview>
     <square-overview title="Pages" value="182"></square-overview>

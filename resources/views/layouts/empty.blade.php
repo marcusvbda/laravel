@@ -19,12 +19,3 @@
 @include('layouts.footer')
 </html>
 @section("scripts")
-<script>
-Vue.config.devtools=false;
-Vue.config.productionTip = false;
-new Vue(
-{
-  el: '#app',
-  delimiters: ["[[","]]"]
-});
-</script>
