@@ -4,7 +4,7 @@ use App\Models\{User,Page};
 use Illuminate\Database\Seeder;
 use marcusvbda\uploader\Models\FileCategory;
 use Illuminate\Support\Facades\Storage;
-use marcusvbda\uploader\Models\Files as _File;
+use marcusvbda\uploader\Models\File as _File;
 use marcusvbda\uploader\Controllers\UploaderController as Uploader;
 
 
@@ -56,14 +56,20 @@ class FilesTableSeeder extends Seeder
     public function run()
     {
         FileCategory::truncate();
+        _File::truncate();
+        DB::table('_files_categories_relation')->truncate();
+        DB::table('_files_relation')->truncate();
         Storage::deleteDirectory(config('uploader.upload_path'));
         $category1 = FileCategory::create(["name"=>"Categoria 1"]);
         $category2 = FileCategory::create(["name"=>"Categoria 2"]);
         $file1 = Uploader::upload("https://cdn.auth0.com/blog/logos/laravel.png","image de teste 1","alt da imagem de teste 1");
         $file2 = Uploader::upload("https://www.williamzimmermann.com.br/wp-content/uploads/2018/06/laravel-logo.png","image de teste 2","alt da imagem de teste 2");
         $file3 = Uploader::upload("https://udemy-images.udemy.com/course/750x422/758582_ea1f.jpg","image de teste 3","alt da imagem de teste 3");
-        $category1->addFile($file1->id);
-        $category1->addFile($file2->id);
-        $category2->addFile($file3->id);
+        $category1->addFile($file1);
+        $category1->addFile($file2);
+        $category2->addFile($file3);
+        Uploader::makeThumbnail($file1);
+        Uploader::makeThumbnail($file2);
+        Uploader::makeThumbnail($file3);
     }
 }
