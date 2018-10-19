@@ -18,7 +18,7 @@ class PagesController extends Controller
             "order_name" =>  ( isset($data["order_name"]) ? $data["order_name"] : "id" )
         ];
         $pages = Page::where("name","like","%".$filter["filter"]."%")
-            ->where("slug","like","%".$filter["filter"]."%")
+            ->orWhere("slug","like","%".$filter["filter"]."%")
             ->orderBy($filter['order_name'], $filter['order_type'])
             ->paginate(5);
         return view('pages.pages.index', compact('pages','filter'));

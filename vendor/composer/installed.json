@@ -1314,25 +1314,55 @@
         ]
     },
     {
+        "name": "marcusvbda/menu",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "dist": {
+            "type": "path",
+            "url": "packages/marcusvbda/menu",
+            "reference": "0ebbaa9c5b68fed04d23515bcd005f118066a706",
+            "shasum": null
+        },
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "marcusvbda\\menu\\": "src/"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Marcus Vinicius Bassalobre de Assis",
+                "email": "vinicius.bda@icloud.com"
+            }
+        ],
+        "transport-options": {
+            "symlink": true
+        }
+    },
+    {
         "name": "marcusvbda/uploader",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/marcusvbda/fileuploader.git",
-            "reference": "d01c82ab5511b10fce31dba695c474b75e700a71"
+            "reference": "cca4a1b9fa19d1bb258fe46c66c7cc56805e8ca5"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/marcusvbda/fileuploader/zipball/d01c82ab5511b10fce31dba695c474b75e700a71",
-            "reference": "d01c82ab5511b10fce31dba695c474b75e700a71",
+            "url": "https://api.github.com/repos/marcusvbda/fileuploader/zipball/cca4a1b9fa19d1bb258fe46c66c7cc56805e8ca5",
+            "reference": "cca4a1b9fa19d1bb258fe46c66c7cc56805e8ca5",
             "shasum": ""
         },
         "require": {
             "cviebrock/eloquent-sluggable": "^4.6",
             "spatie/laravel-image-optimizer": "^1.3"
         },
-        "time": "2018-10-18T21:49:31+00:00",
+        "time": "2018-10-18T22:06:59+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {

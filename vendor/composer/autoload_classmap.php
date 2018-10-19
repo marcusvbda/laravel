@@ -3595,6 +3595,7 @@ return array(
     'Whoops\\Util\\SystemFacade' => $vendorDir . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
     'Whoops\\Util\\TemplateHelper' => $vendorDir . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
     'XdgBaseDir\\Xdg' => $vendorDir . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
+    'marcusvbda\\menu\\Menu' => $vendorDir . '/marcusvbda/menu/src/menu.php',
     'marcusvbda\\uploader\\Controllers\\UploaderController' => $vendorDir . '/marcusvbda/uploader/src/Controllers/UploaderController.php',
     'marcusvbda\\uploader\\Models\\File' => $vendorDir . '/marcusvbda/uploader/src/Models/File.php',
     'marcusvbda\\uploader\\Models\\FileCategory' => $vendorDir . '/marcusvbda/uploader/src/Models/FileCategory.php',

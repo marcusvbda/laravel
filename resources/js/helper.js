@@ -8,23 +8,8 @@ var helper =
             type: type,
             showCancelButton: true,
             focusConfirm: true,
-            buttons: 
-            {
-                cancel: 
-                {
-                    text: "Cancelar",
-                    value: false,
-                    visible: true,
-                    closeModal: true,
-                },
-                confirm: 
-                {
-                    text: "Confirmar",
-                    value: true,
-                    visible: true,
-                    closeModal: true,
-                }
-            }
+            cancelButtonText : "Não",
+            confirmButtonText : "Sim",
         })
         .then((result) => 
         {

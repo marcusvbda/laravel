@@ -14,7 +14,7 @@ Route::group(['prefix' => 'admin'], function ()
   {
       Route::get('/', function () 
       {
-          return view('dashboard.dashboard');
+          return view('pages.dashboard.index');
       })->name("dashboard");
       require("partials/paginas.php");
   });

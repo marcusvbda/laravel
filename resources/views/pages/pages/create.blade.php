@@ -90,12 +90,18 @@
 
 @section('scripts')
 <script>
-    $("#menuPaginas").addClass("active");
     $("#content").summernote(
     {
-        placeholder : "O conteudo da página aqui...",
         height: 300,
         popover: {},
+        toolbar: [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']]
+        ]
     });
 </script>
 @endsection

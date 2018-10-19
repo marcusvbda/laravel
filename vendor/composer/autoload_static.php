@@ -30,6 +30,7 @@ class ComposerStaticInit56ccb67183560e7a9c3418fcc7ef5170
         'm' => 
         array (
             'marcusvbda\\uploader\\' => 20,
+            'marcusvbda\\menu\\' => 16,
         ),
         'X' => 
         array (
@@ -150,6 +151,10 @@ class ComposerStaticInit56ccb67183560e7a9c3418fcc7ef5170
         'marcusvbda\\uploader\\' => 
         array (
             0 => __DIR__ . '/..' . '/marcusvbda/uploader/src',
+        ),
+        'marcusvbda\\menu\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/marcusvbda/menu/src',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -3982,6 +3987,7 @@ class ComposerStaticInit56ccb67183560e7a9c3418fcc7ef5170
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
+        'marcusvbda\\menu\\Menu' => __DIR__ . '/..' . '/marcusvbda/menu/src/menu.php',
         'marcusvbda\\uploader\\Controllers\\UploaderController' => __DIR__ . '/..' . '/marcusvbda/uploader/src/Controllers/UploaderController.php',
         'marcusvbda\\uploader\\Models\\File' => __DIR__ . '/..' . '/marcusvbda/uploader/src/Models/File.php',
         'marcusvbda\\uploader\\Models\\FileCategory' => __DIR__ . '/..' . '/marcusvbda/uploader/src/Models/FileCategory.php',

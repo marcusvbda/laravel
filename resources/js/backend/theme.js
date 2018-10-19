@@ -7,4 +7,4 @@ window.summernote = summernote;
 window.Vue = vue;
 Vue.component('square-overview', require('./components/dashboard/quadro-overview.vue'));
 Vue.component('menu-profile', require('./components/menu-profile.vue'));
-Vue.component('table-component', require('./components/table-component.vue'));
+Vue.component('laravel-table', require('./components/laravel-table.vue'));

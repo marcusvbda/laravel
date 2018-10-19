@@ -16757,6 +16757,10 @@ html .ql-toolbar .ql-picker .ql-picker-options {
   color: #5337EA !important;
 }
 
+.main-sidebar {
+  z-index: 1050 !important;
+}
+
 @font-face {
   font-family: "summernote";
   font-style: normal;

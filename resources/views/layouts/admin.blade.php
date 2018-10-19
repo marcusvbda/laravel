@@ -1,3 +1,7 @@
+<?php
+  use marcusvbda\menu\Menu;
+?>    
+
 @extends('layouts.empty')
 
 @section('content')
@@ -33,7 +37,7 @@
                     <h6 class="main-sidebar__nav-title">Infomativo</h6>
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('dashboard') }}" id="menuDashboard">
+                            <a class="nav-link {{Menu::active("dashboard")}}" href="{{ route('dashboard') }}">
                             <i class="fas fa-tachometer-alt"></i>
                             <span>Dashboard</span>
                             </a>
@@ -42,7 +46,7 @@
                     <h6 class="main-sidebar__nav-title">Template</h6>
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('paginas.index') }}" id="menuPaginas">
+                            <a class="nav-link {{Menu::active("paginas")}}" href="{{ route('paginas.index') }}">
                             <i class="fas fa-bolt"></i>
                             <span>Páginas do site</span>
                             </a>

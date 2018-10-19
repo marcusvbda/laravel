@@ -9868,7 +9868,7 @@ window.summernote = __WEBPACK_IMPORTED_MODULE_2_summernote___default.a;
 window.Vue = __WEBPACK_IMPORTED_MODULE_1_vue___default.a;
 Vue.component('square-overview', __webpack_require__(22));
 Vue.component('menu-profile', __webpack_require__(25));
-Vue.component('table-component', __webpack_require__(28));
+Vue.component('laravel-table', __webpack_require__(28));
 
 /***/ }),
 /* 17 */,
@@ -21302,7 +21302,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/backend/components/table-component.vue"
+Component.options.__file = "resources/js/backend/components/laravel-table.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -21311,9 +21311,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-04a6a7c4", Component.options)
+    hotAPI.createRecord("data-v-e299cbcc", Component.options)
   } else {
-    hotAPI.reload("data-v-04a6a7c4", Component.options)
+    hotAPI.reload("data-v-e299cbcc", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -21335,21 +21335,87 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['data', 'sort_by', 'order_by'],
+    props: ['collumns', 'order_name', 'order_type', 'filter', 'filter_placeholder'],
     data: function data() {
         return {
-            _data: this.data,
-            _sort_by: this.sort_by,
-            _order_by: this.order_by
+            _order_type: this.order_type,
+            _order_name: this.order_name,
+            _collumns: this.collumns
         };
     },
-    components: {
-        'table-thead': '<thead><slot></slot></thead>',
-        'table-tbody': '<tbody><slot></slot></tbody>'
-    },
-    methods: {}
+    methods: {
+        addParameter: function addParameter(key, value, kvp) {
+            if (kvp == '') {
+                document.location.search = '?' + key + '=' + value;
+            } else {
+                var i = kvp.length;var x;while (i--) {
+                    x = kvp[i].split('=');
+                    if (x[0] == key) {
+                        x[1] = value;
+                        kvp[i] = x.join('=');
+                        break;
+                    }
+                }
+                if (i < 0) {
+                    kvp[kvp.length] = [key, value].join('=');
+                }
+                return kvp;
+            }
+        },
+        orderbyCollumn: function orderbyCollumn(key, value) {
+            var kvp = document.location.search.substr(1).split('&');
+            var url = this.addParameter(key, value, kvp);
+            if (this.order_name == value) {
+                if (this.order_type == "ASC") {
+                    url = this.addParameter("order_type", "DESC", url);
+                } else {
+                    url = this.addParameter("order_type", "ASC", url);
+                }
+            }
+            return document.location.search = url.join('&');
+        }
+
+    }
 });
 
 /***/ }),
@@ -21360,15 +21426,152 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("table", [_vm._t("default")], 2)
+  return _c(
+    "div",
+    [
+      _c("div", { staticClass: "card card-small mb-4" }, [
+        _c("div", { staticClass: "card-header border-bottom" }, [
+          _c("form", [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-12" }, [
+                _c("div", { staticClass: "input-group mb-3" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      placeholder: _vm.filter_placeholder,
+                      name: "filter"
+                    },
+                    domProps: { value: _vm.filter }
+                  }),
+                  _vm._v(" "),
+                  _vm._m(0)
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body p-0 pb-3 text-center" }, [
+          _c("table", { staticClass: "table mb-0" }, [
+            _c("thead", { staticClass: "bg-light" }, [
+              _c(
+                "tr",
+                _vm._l(_vm.collumns, function(col) {
+                  return _c("td", { staticClass: "border-0" }, [
+                    _c(
+                      "a",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: col[2],
+                            expression: "col[2]"
+                          }
+                        ],
+                        staticStyle: {
+                          color: "#5A6169",
+                          display: "inline-block",
+                          width: "100%",
+                          cursor: "pointer"
+                        },
+                        attrs: { title: "ordernar" },
+                        on: {
+                          click: function($event) {
+                            _vm.orderbyCollumn("order_name", col[1])
+                          }
+                        }
+                      },
+                      [
+                        _c("i", {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value:
+                                _vm.order_name == col[1] &&
+                                _vm.order_type == "ASC",
+                              expression:
+                                "((order_name==col[1])&&(order_type=='ASC'))"
+                            }
+                          ],
+                          staticClass: "fas fa-caret-up"
+                        }),
+                        _vm._v(" "),
+                        _c("i", {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value:
+                                _vm.order_name == col[1] &&
+                                _vm.order_type == "DESC",
+                              expression:
+                                "((order_name==col[1])&&(order_type=='DESC'))"
+                            }
+                          ],
+                          staticClass: "fas fa-caret-down"
+                        }),
+                        _vm._v(" "),
+                        _c("span", [_vm._v(_vm._s(col[0]))])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "span",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: !col[2],
+                            expression: "!col[2]"
+                          }
+                        ]
+                      },
+                      [_vm._v(_vm._s(col[0]))]
+                    )
+                  ])
+                })
+              )
+            ]),
+            _vm._v(" "),
+            _c("tbody", [_vm._t("tbody")], 2)
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._t("pagination")
+    ],
+    2
+  )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-append" }, [
+      _c(
+        "button",
+        { staticClass: "btn btn-white", attrs: { type: "button" } },
+        [
+          _c("i", { staticClass: "fa fa-search" }),
+          _vm._v(
+            "\n                                    Buscar\n                                "
+          )
+        ]
+      )
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-04a6a7c4", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-e299cbcc", module.exports)
   }
 }
 
