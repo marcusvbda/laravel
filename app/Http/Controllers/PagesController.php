@@ -21,12 +21,12 @@ class PagesController extends Controller
             ->orWhere("slug","like","%".$filter["filter"]."%")
             ->orderBy($filter['order_name'], $filter['order_type'])
             ->paginate(5);
-        return view('pages.pages.index', compact('pages','filter'));
+        return view('backend.pages.pages.index', compact('pages','filter'));
     }
 
     public function create()
     {
-        return view('pages.pages.create');
+        return view('backend.pages.pages.create');
     }
 
     public function store(CreatePage $request)
@@ -39,7 +39,7 @@ class PagesController extends Controller
 
     public function show(Request $request,Page $page)
     {
-        return view('pages.pages.view', compact('page'));
+        return view('backend.pages.pages.view', compact('page'));
     }
 
     public function update(Request $request, Page $page)

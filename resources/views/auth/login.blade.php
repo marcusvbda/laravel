@@ -1,4 +1,4 @@
-@extends('layouts.empty')
+@extends('backend.layouts.empty')
 @section('title','Login')
 @section('content')
 @if($errors->any())

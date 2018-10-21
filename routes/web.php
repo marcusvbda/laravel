@@ -1,7 +1,9 @@
 <?php
-Route::get('/',function(){
-  return redirect('admin/login');
-  // echo "frontend";
+  
+
+Route::get('/phpinfo',function()
+{
+  phpinfo();
 });
 
 Route::get('/testes', 'TesteController@index')->name('testes.index');
@@ -14,8 +16,10 @@ Route::group(['prefix' => 'admin'], function ()
   {
       Route::get('/', function () 
       {
-          return view('pages.dashboard.index');
+          return view('backend.pages.dashboard.index');
       })->name("dashboard");
       require("partials/paginas.php");
   });
 });
+
+require("partials/frontend.php");

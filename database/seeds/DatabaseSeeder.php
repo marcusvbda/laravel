@@ -44,8 +44,9 @@ class pagesSeed extends Seeder
     {
         Page::truncate();
         Page::create([
-          'name'  =>  "Sobre nós",
-          'title' => "Sobre"
+          'name'  =>  "Sobre",
+          'title' =>  "Sobre",
+          'content'=> "...Sobre nosso site"
         ]);
     }
 }
