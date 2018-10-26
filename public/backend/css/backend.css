@@ -16761,6 +16761,127 @@ html .ql-toolbar .ql-picker .ql-picker-options {
   z-index: 1050 !important;
 }
 
+.shaking {
+  -webkit-animation: shake 2s;
+          animation: shake 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+
+  10% {
+    -webkit-transform: translate(0px, -12px);
+            transform: translate(0px, -12px);
+  }
+
+  20% {
+    -webkit-transform: translate(0px, 4px);
+            transform: translate(0px, 4px);
+  }
+
+  30% {
+    -webkit-transform: translate(0px, -1px);
+            transform: translate(0px, -1px);
+  }
+
+  40% {
+    -webkit-transform: translate(0px, 1px);
+            transform: translate(0px, 1px);
+  }
+
+  50% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+
+  60% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+
+  70% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+
+  80% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+
+  90% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+
+  10% {
+    -webkit-transform: translate(0px, -12px);
+            transform: translate(0px, -12px);
+  }
+
+  20% {
+    -webkit-transform: translate(0px, 4px);
+            transform: translate(0px, 4px);
+  }
+
+  30% {
+    -webkit-transform: translate(0px, -1px);
+            transform: translate(0px, -1px);
+  }
+
+  40% {
+    -webkit-transform: translate(0px, 1px);
+            transform: translate(0px, 1px);
+  }
+
+  50% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+
+  60% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+
+  70% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+
+  80% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+
+  90% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
 @font-face {
   font-family: "summernote";
   font-style: normal;

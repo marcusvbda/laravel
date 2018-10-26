@@ -6,9 +6,9 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" :placeholder="filter_placeholder" :value="filter" name="filter">
+                                <input type="text" class="form-control" :placeholder="filter_placeholder"  v-model="filter" name="filter">
                                 <div class="input-group-append">
-                                    <button class="btn btn-white" type="button">
+                                    <button type="submit" class="btn btn-white">
                                         <i class="fa fa-search"></i>
                                         Buscar
                                     </button>
@@ -48,6 +48,7 @@ export default
     props: ['collumns','order_name','order_type','filter','filter_placeholder'],
     data: function () {
       return {
+        _filter: this.filter,
         _order_type: this.order_type,
         _order_name: this.order_name,
         _collumns: this.collumns,

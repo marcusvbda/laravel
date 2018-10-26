@@ -88,7 +88,7 @@
                                     Cancelar alterações
                                 </button>
                             </a>
-                            <button type="submit" class="btn btn-sm btn-royal-blue float-right"><i class="material-icons">file_copy</i> Salvar</button>
+                            <button type="submit" class="btn btn-sm btn-royal-blue float-right shaking"><i class="material-icons">file_copy</i> Salvar</button>
                         </div>
                     </div>
                 </div>
