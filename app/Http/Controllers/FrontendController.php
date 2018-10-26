@@ -11,7 +11,8 @@ class FrontendController extends Controller
     {
         if( empty($page) )
         {
-            return view('frontend.pages.index');
+            $page = (object) ['name' => null];
+            return view('frontend.pages.index',compact('page'));
         }
         $page = Page::findBySlug($page);
         if(empty($page))
@@ -19,6 +20,11 @@ class FrontendController extends Controller
             abort(404);
         }
         return view('frontend.pages.page',compact('page'));
+    }
+
+    public static function write($value,$backup = "")
+    {
+        return ( isset($value) ? $value : $backup);
     }
 
 

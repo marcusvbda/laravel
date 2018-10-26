@@ -5,7 +5,7 @@
             <span class="d-none d-md-inline-block">Sierra Brooks</span>
         </a>
         <div class="dropdown-menu dropdown-menu-small">
-            <a class="dropdown-item" href="./">
+            <a class="dropdown-item" href="/">
                 <i class="material-icons">vertical_split</i> Acessar o site
             </a>
             <a class="dropdown-item" href="user-profile-lite.html">

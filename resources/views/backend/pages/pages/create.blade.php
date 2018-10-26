@@ -59,7 +59,7 @@
         <div class="col-3">
             <div class="card card-small mb-3">
                 <div class="card-header border-bottom p-2">
-                    <h6 class="m-0">Extras</h6>
+                    <h6 class="m-0">Extras & Ações</h6>
                 </div>
                 <div class="row p-2">
                     <div class="col-12">

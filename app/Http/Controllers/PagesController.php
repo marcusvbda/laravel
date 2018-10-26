@@ -42,7 +42,7 @@ class PagesController extends Controller
         return view('backend.pages.pages.view', compact('page'));
     }
 
-    public function update(Request $request, Page $page)
+    public function update(CreatePage $request, Page $page)
     {
         $data = $request->all();
         $page->update($data);

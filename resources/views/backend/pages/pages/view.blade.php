@@ -93,7 +93,7 @@
                 <div class="card-body p-0">
                     <div class="row p-2">
                         <div class="col-12">
-                        <a  href="#" onclick="destroy('{{ route('paginas.deactivate', ['slug' => $page->slug]) }}', '{{ $page->name }}')">
+                            <a  href="#" onclick="destroy('{{ route('paginas.deactivate', ['slug' => $page->slug]) }}', '{{ $page->name }}')">
                                 <button type="button" type="button" class="btn btn-sm btn-outline-danger ml-auto">
                                     Excluir
                                 </button>

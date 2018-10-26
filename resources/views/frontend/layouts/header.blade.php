@@ -1,5 +1,11 @@
+<?php 
+  use App\Http\Controllers\SiteController;
+  use App\Http\Controllers\FrontendController as Frontend;
+  $site = SiteController::get();
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 
   <head>
 
@@ -8,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Landing Page - Start Bootstrap Theme</title>
+  <title>{{ $site->title }} @if( isset($page->name)) - {{ $page->name }} @endif</title>
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- laravel mix -->
@@ -27,6 +33,6 @@
     <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <a class="navbar-brand" href="/">{{ $site->title }}</a>
       </div>
     </nav>

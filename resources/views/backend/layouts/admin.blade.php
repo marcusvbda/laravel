@@ -46,9 +46,15 @@
                     <h6 class="main-sidebar__nav-title">Template</h6>
                     <ul class="nav flex-column">
                         <li class="nav-item">
+                            <a class="nav-link {{Menu::active("site")}}" href="{{ route('site.index') }}">
+                                <i class="material-icons">edit</i>
+                                <span>Edição do site</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link {{Menu::active("paginas")}}" href="{{ route('paginas.index') }}">
-                            <i class="fas fa-bolt"></i>
-                            <span>Páginas do site</span>
+                                <i class="fas fa-bolt"></i>
+                                <span>Páginas do site</span>
                             </a>
                         </li>
                     </ul>

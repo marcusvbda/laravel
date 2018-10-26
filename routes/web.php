@@ -14,6 +14,7 @@ Route::group(['prefix' => 'admin'], function ()
   require("partials/auth.php");
   Route::group(['middleware' => 'auth'], function()
   {
+      require("partials/site.php");
       Route::get('/', function () 
       {
           return view('backend.pages.dashboard.index');

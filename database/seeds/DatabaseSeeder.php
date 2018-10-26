@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\{User,Page};
+use App\Models\{User,Page,SiteConfig};
 use Illuminate\Database\Seeder;
 use marcusvbda\uploader\Models\FileCategory;
 use Illuminate\Support\Facades\Storage;
@@ -18,10 +18,22 @@ class DatabaseSeeder extends Seeder
         $this->call([
             usersSeed::class,
             pagesSeed::class,
-            FilesTableSeeder::class
+            FilesTableSeeder::class,
+            SiteConfigSeeder::class
         ]);
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+    }
+}
+
+class SiteConfigSeeder extends Seeder
+{
+    public function run()
+    {
+        SiteConfig::truncate();
+        SiteConfig::create([
+          'title' => 'Nome do site'
+        ]);
     }
 }
 
