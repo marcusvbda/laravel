@@ -66,15 +66,7 @@
             <div class="main-navbar sticky-top bg-white">
                 <!-- Main Navbar -->
                 <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
-                <form action="#" class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
-                    <div class="input-group input-group-seamless ml-3">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                        <i class="fas fa-search"></i>
-                        </div>
-                    </div>
-                    <input class="navbar-search form-control" type="text" placeholder="Procurando por alguma coisa ?" aria-label="Search"> </div>
-                </form>
+                <div class="main-navbar__search w-100 d-none d-md-flex d-lg-flex"></div>
                 <ul class="navbar-nav border-left flex-row ">
                     <li class="nav-item border-right dropdown notifications">
                     <a class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
