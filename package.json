@@ -25,6 +25,7 @@
         "summernote": "^0.8.10",
         "sweetalert2": "^7.28.5",
         "toastr": "^2.1.4",
+        "vue-resource": "^1.5.1",
         "vue-toastr-2": "0.0.10"
     }
 }

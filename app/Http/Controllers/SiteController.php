@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\{SiteConfig};
+use App\Models\{SiteConfig,Page};
 use App\Http\Requests\CreateSiteConfig;
 use App\Services\AlertService;
 
@@ -12,15 +12,23 @@ class SiteController extends Controller
     public function index()
     {
         $site = SiteConfig::first();
-        return view('backend.pages.site.index',compact('site'));
+        $pages = Page::get();
+        return view('backend.pages.site.index',compact('site','pages'));
     }
 
-    public function edit(CreateSiteConfig $request,SiteConfig $site)
+    public function edit(CreateSiteConfig $request, SiteConfig $site)
     {
-        $data = $request->all();
-        $site->update($data);
-        $alert = AlertService::flash('success', '<strong>Pronto!</strong> Site atualizado com sucesso.');
-        return redirect(route('site.index'));
+        try
+        {
+            $data = $request->all();
+            $data["menus"]=json_encode($data["menus"]);
+            $site->update($data);
+            return response()->json(["success"=>true,"message"=>null,"data"=> $data  ]);
+        }
+        catch(\Exception $e)
+        {
+            return response()->json(["success"=>false,"message"=>$e->getMessage(),"data"=>null]);
+        }
     }
 
     public static function get()

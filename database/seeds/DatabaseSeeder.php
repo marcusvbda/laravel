@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             usersSeed::class,
             pagesSeed::class,
-            FilesTableSeeder::class,
+            // FilesTableSeeder::class,
             SiteConfigSeeder::class
         ]);
 

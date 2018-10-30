@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{Page};
+use App\Models\{Page,SiteConfig};
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -26,6 +26,24 @@ class FrontendController extends Controller
     {
         return ( isset($value) ? $value : $backup);
     }
+
+    public static function menus()
+    {
+        $site = SiteConfig::first();
+        $menu = json_decode($site->menus);
+        $menus = [];
+        foreach($menu as $m)
+        {
+            $page = Page::find($m->page_id);
+            $menus[] = (object)[
+                "name"   => $m->name,
+                "route"  => route("frontend.index",["page"=> (isset($page) ? $page->slug : null) ])
+            ];
+        }
+        return $menus;
+    }
+
+
 
 
 }
