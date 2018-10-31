@@ -1,7 +1,7 @@
 <template>
 	<div>
 		
-		<form v-on:submit.prevent="onSubmit()">
+		<form v-on:submit.prevent="submit()">
 			<div class="row">
 				<div class="col-9">
 
@@ -45,7 +45,7 @@
 									<div class="form-group row">
 										<template v-for="(menu,i) in site.menus">
 											<div class="col-1"> 
-												<button type="button"  @click="eraseMenu(i)" class="mb-2 btn btn-sm btn-danger mr-1">
+												<button type="button" @click="eraseMenu(i)" class="mb-2 btn btn-sm btn-danger mr-1">
 													<i class="fas fa-times-circle"></i>
 												</button>
 											</div>
@@ -124,18 +124,17 @@
 			},
 			cancel()
 			{
-				helper.confirm("Confirmação","Deseja mesmo alterações?","warning",function()
+				this.$swal.confirm("Confirmação","Deseja mesmo alterações?","warning",function()
 				{
 					return window.location.reload();
 				});
 			},
-			onSubmit()
+			submit()
 			{
 				this.$http.put(this.action,this.site)
 				.then(function(response)
 				{
 					response = response.data;
-					console.log(response);
 					if(!response.success)
 					{
 						return this.$toastr.error(response.message);

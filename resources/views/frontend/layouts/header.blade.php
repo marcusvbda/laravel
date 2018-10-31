@@ -1,11 +1,10 @@
 <?php 
-use App\Http\Controllers\SiteController;
-use App\Http\Controllers\FrontendController as Frontend;
-$site = SiteController::get();
+  use App\Http\Controllers\SiteController;
+  use App\Http\Controllers\FrontendController as Frontend;
+  $site = SiteController::get();
 ?>
 <!DOCTYPE html>
 <html>
-
 
 <head>
 
@@ -36,7 +35,7 @@ $site = SiteController::get();
       <a class="navbar-brand" href="/">{{ $site->title }}</a>
       <nav class="my-2 my-md-0 mr-md-3">
         @foreach(Frontend::menus() as $menu)
-          <a class="p-2 text-dark" href="{{ $menu->route }}">{{ $menu->name }}</a>
+        <a class="p-2 text-dark" href="{{ $menu->route }}">{{ $menu->name }}</a>
         @endforeach
       </nav>
     </div>

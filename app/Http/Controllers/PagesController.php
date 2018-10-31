@@ -44,21 +44,34 @@ class PagesController extends Controller
 
     public function update(CreatePage $request, Page $page)
     {
-        $data = $request->all();
-        $page->update($data);
-        $alert = AlertService::flash('success', '<strong>Pronto!</strong> Página '.$page->name.' foi atualizada com sucesso.');
-        return redirect(route('paginas.show',['slug' => $page->slug]));
+        try
+        {
+            $data = $request->all();
+            $page->update($data);
+            return response()->json(["success"=>true,"message"=>null,"data"=> $page->slug  ]);
+        }
+        catch(\Exception $e)
+        {
+            return response()->json(["success"=>false,"message"=>$e->getMessage(),"data"=>null]);
+        }
     }
 
     public function destroy(Page $page)
     {
-        if(!$page) 
+        try
         {
-            abort(404);
+            if(!$page) 
+            {
+                abort(404);
+            }
+            $page->delete();
+            $alert = AlertService::flash('success', '<strong>Pronto!</strong> Página '.$page->name.' foi excluida com sucesso.');
+            return response()->json(["success"=>true,"message"=>null,"data"=>  route('paginas.index')  ]);
         }
-        $page->delete();
-        $alert = AlertService::flash('success', '<strong>Pronto!</strong> Página '.$page->name.' foi excluida com sucesso.');
-        return redirect(route('paginas.index'));
+        catch(\Exception $e)
+        {
+            return response()->json(["success"=>false,"message"=>$e->getMessage(),"data"=>null]);
+        }
     }
 
 }

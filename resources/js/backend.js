@@ -6,7 +6,7 @@ var app = new Vue(
     delimiters: ["[[","]]"],
     data : 
     {
-
+    	
     },
     methods:
     {

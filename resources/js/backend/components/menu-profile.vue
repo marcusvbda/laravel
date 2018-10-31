@@ -31,7 +31,7 @@
         {
             logout: function()
             {
-                helper.confirm("Confirmação","Deseja mesmo efetuar o logout? ","warning",function()
+                this.$swal.confirm("Confirmação","Deseja mesmo efetuar o logout? ","warning",function()
                 {
                     return window.location.href = this.routelogout;
                 }.bind(this));
