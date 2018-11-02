@@ -37,14 +37,5 @@
 </div>
 @endsection
 @section('body')  
-    <pages-view
-        _url="{{ asset($page->slug )}}"
-        _title="{{ $page->title }}"
-        _id="{{ $page->id }}"
-        _name="{{ $page->name }}"
-        _status="{{ $page->status }}"
-        _content="{!! $page->content !!}"
-        _destroy_route="{{ route('paginas.deactivate', ['slug' => $page->slug]) }}" 
-    >
-    </pages-view>
+    <pages-view :_page="{{ $page }}"></pages-view>
 @endsection

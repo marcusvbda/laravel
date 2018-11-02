@@ -9,6 +9,9 @@ import VueToastr2 from 'vue-toastr-2'
 import VueResource from 'vue-resource'
 import 'vue-toastr-2/dist/vue-toastr-2.min.css'
 import VueSweetalert2 from 'vue-sweetalert2';
+import BootstrapVue from 'bootstrap-vue'
+
+Vue.use(BootstrapVue);
 window.toastr = require('toastr')
 Vue.use(VueToastr2)
 // Vue.use(VueSweetalert2);
@@ -20,6 +23,8 @@ Vue.component('vue-summernote', require('./components/vue-summernote.vue'));
 Vue.component('pages-view', require('./components/pages/view.vue'));
 Vue.component('pages-create', require('./components/pages/create.vue'));
 Vue.component('datatable',require("./components/datatable.vue"));
+Vue.component('vue-categories',require("./components/vue-categories.vue"));
+Vue.component('post-create',require("./components/posts/post-create.vue"));
 
 
 

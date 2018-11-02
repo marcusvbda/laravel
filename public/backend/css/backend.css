@@ -16882,6 +16882,12 @@ html .ql-toolbar .ql-picker .ql-picker-options {
   }
 }
 
+a.link {
+  color: #3490dc !important;
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+
 @font-face {
   font-family: "summernote";
   font-style: normal;

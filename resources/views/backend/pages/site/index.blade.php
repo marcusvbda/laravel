@@ -13,10 +13,9 @@
 
 @section('body')
 <site-edit
-    _action="{{ route('site.edit',['id'=>$site->id]) }}"
-    _title="{{ $site->title }}"
-    _pages="{{ json_encode($pages) }}"
-    _menus="{{ $site->menus }}"
+    :_site="{{ $site }}"
+    :_pages="{{ $pages }}"
+    :_menus="{{ $site->menus }}"
 >
 
 </site-edit>

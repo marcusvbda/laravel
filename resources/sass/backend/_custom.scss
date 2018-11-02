@@ -35,3 +35,11 @@
   90% { transform: translate(0px, 0px)    }
   100% { transform:translate(0px, 0px)    }
 }
+
+
+a.link
+{
+  color:$blue!important;
+  text-decoration: underline!important;
+  cursor:pointer;
+}

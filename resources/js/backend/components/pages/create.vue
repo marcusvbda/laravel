@@ -47,8 +47,7 @@
 								</div>
 							</div>
 						</div>
-						<hr class="m-2">
-						<div class="card-body p-0">
+						<div class="card-footer p-0">
 							<div class="row p-2">
 								<div class="col-12">
 									<button type="submit" class="btn btn-sm btn-royal-blue float-right shaking"><i class="material-icons">file_copy</i> Salvar</button>

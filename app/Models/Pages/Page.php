@@ -12,7 +12,10 @@ class Page extends Model
 {
 	use SoftDeletes,Sluggable,SluggableScopeHelpers;
 	
+
     protected $table = 'pages';
+	protected $appends = ['url','destroy_route'];
+
 	protected $fillable = [
 		'name',
 		'title',
@@ -25,6 +28,17 @@ class Page extends Model
 		$this->attributes['name'] = $value;
 		$this->attributes['slug'] = SlugService::createSlug($this, 'slug', $value);
 	}
+
+	public function getUrlAttribute()
+	{
+		return 	asset($this->slug);
+	}
+
+	public function getDestroyRouteAttribute()
+	{
+		return 	route('paginas.deactivate', ['slug' => $this->slug]);
+	}
+
 
 	public function sluggable()
     {

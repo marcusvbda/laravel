@@ -100,17 +100,18 @@
 <script>
 	export default 
 	{
-		props: ["_action","_title","_pages","_menus"],
+		props: ["_site","_pages","_menus"],
 		data: function () {
 			return {
 				method:this._method,
 				action:this._action,
-				pages: JSON.parse(this._pages),
-				site:{
-					title:this._title,
-					menus:JSON.parse(this._menus),
-				}
+				pages: this._pages,
+				site: this._site
 			}
+		},
+		mounted()
+		{
+			this.site.menus = this._menus;
 		},
 		methods:
 		{
@@ -131,7 +132,7 @@
 			},
 			submit()
 			{
-				this.$http.put(this.action,this.site)
+				this.$http.put(this.site.edit_route,this.site)
 				.then(function(response)
 				{
 					response = response.data;

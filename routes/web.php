@@ -18,6 +18,7 @@ Route::group(['prefix' => 'admin'], function ()
       Route::get('/', 'DashboardController@index')->name('dashboard');
       require("partials/paginas.php");
       require("partials/postagens.php");
+      require("partials/categorias.php");
   });
 });
 

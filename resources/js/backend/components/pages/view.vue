@@ -38,8 +38,8 @@
 							<div class="col-12">
 								<small>
 									<i class="fas fa-globe"></i> 
-									<a title="Acessar página" v-bind:href="_url" target="_blank">
-										{{ _url }}
+									<a title="Acessar página" v-bind:href="page.url" target="_blank">
+										{{ page.url }}
 									</a>
 								</small>
 							</div>
@@ -57,8 +57,7 @@
 								</div>
 							</div>
 						</div>
-						<hr class="m-2">
-						<div class="card-body p-0">
+						<div class="card-footer p-0">
 							<div class="row p-2">
 								<div class="col-12">
 									<button @click="destroy()" type="button" class="btn btn-sm btn-outline-danger ml-auto">
@@ -80,17 +79,10 @@
 <script>
 	export default 
 	{
-		props: ["_id","_name","_title","_url","_status","_destroy_route","_content"],
+		props: ["_page","_destroy_route"],
 		data: function () {
 			return {
-				page:
-				{
-					id      : this._id,
-					name    : this._name,
-					title   : this._title,
-					content : this._content,
-					status  : this._status,
-				}
+				page:this._page
 			}
 		},
 		methods:
@@ -120,7 +112,7 @@
 				{
 					if(text==this.page.name)
 					{
-						this.$http.delete(this._destroy_route,{})
+						this.$http.delete(this.page.destroy_route,{})
 						.then(function(response)
 						{
 							response = response.data;

@@ -12,7 +12,6 @@ class SiteController extends Controller
     public function index()
     {
         $site = SiteConfig::first();
-        $pages = Page::get();
         return view('backend.pages.site.index',compact('site','pages'));
     }
 

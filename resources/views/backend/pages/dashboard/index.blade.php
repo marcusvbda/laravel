@@ -16,10 +16,10 @@
  
 <div class="row">
     <div class="col-3">
-        <square-overview title="Postagens" value="{{ $pages->count() }}" route="{{ route('posts.index') }}"></square-overview>
+        <square-overview title="Postagens" value="{{ $postsCount }}" route="{{ route('posts.index') }}"></square-overview>
     </div>
     <div class="col-3">
-        <square-overview title="Páginas" value="{{ $pages->count() }}" route="{{ route('paginas.index') }}"></square-overview>
+        <square-overview title="Páginas" value="{{ $pagesCount }}" route="{{ route('paginas.index') }}"></square-overview>
     </div>
 </div>
 @endsection
