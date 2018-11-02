@@ -12,15 +12,11 @@ class PagesController extends Controller
     public function index(Request $request)
     {
         $data = $request->all();
-        $filter = [
-            "filter"     =>  ( isset($data["filter"]) ? $data["filter"] : "" ) ,
-            "order_type" =>  ( isset($data["order_type"]) ? $data["order_type"] : "DESC" ) ,
-            "order_name" =>  ( isset($data["order_name"]) ? $data["order_name"] : "id" )
-        ];
-        $pages = Page::where("name","like","%".$filter["filter"]."%")
-            ->orWhere("slug","like","%".$filter["filter"]."%")
-            ->orderBy($filter['order_name'], $filter['order_type'])
-            ->paginate(5);
+        $filter = (isset($data["filter"]) ? $data["filter"] : "");
+
+        $pages = Page::where("name","like","%$filter%")
+            ->orWhere("slug","like","%$filter%")
+            ->paginate(10);
         return view('backend.pages.pages.index', compact('pages','filter'));
     }
 
@@ -31,10 +27,17 @@ class PagesController extends Controller
 
     public function store(CreatePage $request)
     {
-        $page = $request->all();
-        $page = Page::create($page);
-        $alert = AlertService::flash('success', '<strong>Pronto!</strong> Página '.$page->name.' foi adicionada com sucesso.');
-        return redirect(route('paginas.index'))->with(compact('page'));
+        try
+        {
+            $page = $request->all();
+            $page = Page::create($page);
+            $alert = AlertService::flash('success', '<strong>Pronto!</strong> Página '.$page->name.' foi adicionada com sucesso.');
+            return response()->json(["success"=>true,"message"=>null,"data"=> route('paginas.index') ]);
+        }
+        catch(\Exception $e)
+        {
+            return response()->json(["success"=>false,"message"=>$e->getMessage(),"data"=>null]);
+        }
     }
 
     public function show(Request $request,Page $page)

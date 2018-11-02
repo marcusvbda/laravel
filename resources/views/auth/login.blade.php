@@ -22,7 +22,7 @@
                         <div class="card-body">
                            <img class="auth-form__logo d-table mx-auto mb-3" src="{{ url('/') }}/images/logo.png" alt="Shards Dashboards - Register Template">
                            <h5 class="auth-form__title text-center mb-4">Acesse sua conta</h5>
-                           <form  method="post" action="{{ route('login')}}">
+                           <form  method="post" action="{{ route('login') }}">
                                @csrf
                               <div class="form-group">
                                  <label for="exampleInputEmail1">Email</label>

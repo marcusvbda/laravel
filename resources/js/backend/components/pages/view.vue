@@ -15,7 +15,7 @@
 							<div class="form-group row">
 								<label  class="col-2 col-form-label">Título</label>
 								<div class="col-10">
-									<input class="form-control" name="title" type="text"  v-model="page.title">
+									<input class="form-control" name="title" type="text" placeholder="Título da página..." v-model="page.title">
 								</div>
 							</div>
 							<div class="form-group row">
