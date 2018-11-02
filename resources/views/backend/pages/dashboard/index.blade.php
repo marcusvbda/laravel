@@ -15,9 +15,12 @@
 
  
 <div class="row">
-    <square-overview title="Posts" value="2,390"></square-overview>
-    <square-overview title="Pages" value="182"></square-overview>
-    <square-overview title="Coments" value="8,147"></square-overview>
+    <div class="col-3">
+        <square-overview title="Postagens" value="{{ $pages->count() }}" route="{{ route('posts.index') }}"></square-overview>
+    </div>
+    <div class="col-3">
+        <square-overview title="Páginas" value="{{ $pages->count() }}" route="{{ route('paginas.index') }}"></square-overview>
+    </div>
 </div>
 @endsection
  

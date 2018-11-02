@@ -24,7 +24,7 @@
             data: function () {
               return {
                 _routelogout: this.routelogout,
-                _siteRoute: this.siteRoute
+                _siteRoute: this.siteRoute,
             }
         },
         methods:

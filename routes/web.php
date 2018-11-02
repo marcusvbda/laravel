@@ -15,11 +15,9 @@ Route::group(['prefix' => 'admin'], function ()
   Route::group(['middleware' => 'auth'], function()
   {
       require("partials/site.php");
-      Route::get('/', function () 
-      {
-          return view('backend.pages.dashboard.index');
-      })->name("dashboard");
+      Route::get('/', 'DashboardController@index')->name('dashboard');
       require("partials/paginas.php");
+      require("partials/postagens.php");
   });
 });
 

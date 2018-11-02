@@ -26,7 +26,7 @@
 
             <div class="card-body p-0 pb-0 text-center">
 
-                <div class="card-header border-bottom">
+                <div class="card-header border-bottom pb-0">
                     <form>
                         <div class="row">
                             <div class="col-12">
@@ -69,7 +69,7 @@
                             </td>
                             <td>
                                 <a href="{{ route('paginas.show', [ 'slug' => $row->slug]) }}">
-                                    <button type="button" class="mb-2 btn btn-sm btn-outline-royal-blue mr-2">
+                                    <button type="button" class="btn btn-sm btn-outline-royal-blue">
                                         <i class="fas fa-eye"></i> Visualizar
                                     </button>
                                 </a>
