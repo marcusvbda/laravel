@@ -14,11 +14,13 @@ class Category extends Model
 	use SoftDeletes,Sluggable,SluggableScopeHelpers;
 
 	protected $table = 'categories';
+
 	protected $fillable = [
 		'name',
 		'slug',
 		'parent'
 	];
+
 
 	protected static function boot(){
 		parent::boot();
@@ -34,6 +36,7 @@ class Category extends Model
 			]
 		];
 	}
+
 
 	public function setNameAttribute($value)
 	{

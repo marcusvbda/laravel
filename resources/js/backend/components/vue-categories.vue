@@ -16,20 +16,19 @@
 					<li class="list-group-item px-3 pb-2 listCategories">
 
 						<b-form-checkbox-group ref="categories" v-model="categories">
-							<template v-for="(category,i) in _categories">
+							<template v-for="(category,i) in categoryList">
 								<p class="mb-1">
 									<b-form-checkbox class="item" :value="category.id">{{ category.name }}</b-form-checkbox>
-									<a class="float-right link" v-if="(categories.includes(category.id)&&(primaryCategory!=category.id))" @click="primaryCategory=category.id"> Tornar primario</a>
-									<b class="float-right link" v-if="(primaryCategory==category.id)">Primário</b>
+									<a class="float-right link" v-if="(categories.includes(category.id)&&(primary!=category.id))" @click="primary=category.id"> Tornar primario</a>
+									<b class="float-right link" v-if="(categories.includes(category.id)&&(primary==category.id))">Primário</b>
 								</p>
 								<p v-for="sub in category.sub_categories" class="mb-1 pl-4">
 									<b-form-checkbox  :value="sub.id">{{ sub.name }}</b-form-checkbox>
-									<a class="float-right link" v-if="(categories.includes(sub.id)&&(primaryCategory!=sub.id))" @click="primaryCategory=sub.id"> Tornar primario</a>
-									<b class="float-right link" v-if="(primaryCategory==sub.id)">Primário</b>
+									<a class="float-right link" v-if="(categories.includes(sub.id)&&(primary!=sub.id))" @click="primary=sub.id"> Tornar primario</a>
+									<b class="float-right link" v-if="(categories.includes(sub.id)&&(primary==sub.id))">Primário</b>
 								</p>
 							</template>
 						</b-form-checkbox-group>
-
 						
 
 					</li>
@@ -56,7 +55,7 @@
 										<label class="input-group-text">Categoria pai</label>
 									</div>
 									<select class="custom-select" v-model="newCategory.parent"  ref="parentCategory">
-										<template v-for="(category,i) in categories">
+										<template v-for="(category,i) in categoryList">
 											<option :value="category.id">{{ category.name }}</option>
 										</template>
 									</select>
@@ -78,7 +77,8 @@
 			return {
 				categories: [],
 				newCategorytype:"pai",
-				primaryCategory:null,
+				categoryList:this._categories,
+				primary:null,
 				newCategory:
 				{
 					name:null,
@@ -88,10 +88,15 @@
 		},
 		methods:
 		{
+			value()
+			{
+				return {
+					selected : this.categories,
+					primary:this.primary
+				};
+			},
 			addCategory()
 			{
-				return console.log(this.primaryCategory);
-
 				if((this.newCategorytype=='filho')&&(!this.newCategory.parent))
 				{
 					this.$refs.parentCategory.focus();
@@ -106,7 +111,7 @@
 					{
 						return this.$toastr.error(response.message);
 					}
-					this.categories = response.data;
+					this.categoryList = response.data;
 					this.newCategorytype = "pai";
 					this.newCategory.name = null;
 					this.newCategory.parent = null;

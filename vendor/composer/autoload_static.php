@@ -423,6 +423,7 @@ class ComposerStaticInit56ccb67183560e7a9c3418fcc7ef5170
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Requests\\CreateCategory' => __DIR__ . '/../..' . '/app/Http/Requests/CreateCategory.php',
         'App\\Http\\Requests\\CreatePage' => __DIR__ . '/../..' . '/app/Http/Requests/CreatePage.php',
+        'App\\Http\\Requests\\CreatePost' => __DIR__ . '/../..' . '/app/Http/Requests/CreatePost.php',
         'App\\Http\\Requests\\CreateSiteConfig' => __DIR__ . '/../..' . '/app/Http/Requests/CreateSiteConfig.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Categories/Category.php',
         'App\\Models\\ModelCategory' => __DIR__ . '/../..' . '/app/Models/Categories/ModelCategory.php',

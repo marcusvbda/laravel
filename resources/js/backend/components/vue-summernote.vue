@@ -31,9 +31,9 @@
     },
     methods:
     {
-     teste()
+     value()
      {
-      alert("teste");
+      return $(this.$refs.editor).summernote('code');
     }
   }
 }

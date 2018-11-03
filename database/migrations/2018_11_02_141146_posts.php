@@ -18,7 +18,8 @@ class Posts extends Migration
             $table->charset = 'utf8';
             $table->collation = 'utf8_unicode_ci';
             $table->increments('id');
-            $table->string('name',100);  
+            $table->string('title',100);  
+            $table->string('name',150);  
             $table->text('description')->nullable();
             $table->string('slug');  
             $table->string('status',1)->default("A");

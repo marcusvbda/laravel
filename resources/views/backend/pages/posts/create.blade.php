@@ -31,7 +31,7 @@
 @section('body')  
 	<post-create 
 		:_categories="{{ $categories }}" 
-		_store_route="{{ route('categorias.store') }}">
-			
+		_route_store_categories="{{ route('categorias.store') }}"
+	>
 	</post-create>
 @endsection

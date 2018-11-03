@@ -20,8 +20,8 @@ Vue.component('square-overview', require('./components/dashboard/quadro-overview
 Vue.component('menu-profile', require('./components/menu-profile.vue'));
 Vue.component('site-edit', require('./components/site/site-edit.vue'));
 Vue.component('vue-summernote', require('./components/vue-summernote.vue'));
-Vue.component('pages-view', require('./components/pages/view.vue'));
-Vue.component('pages-create', require('./components/pages/create.vue'));
+Vue.component('pages-view', require('./components/pages/page-view.vue'));
+Vue.component('pages-create', require('./components/pages/page-create.vue'));
 Vue.component('datatable',require("./components/datatable.vue"));
 Vue.component('vue-categories',require("./components/vue-categories.vue"));
 Vue.component('post-create',require("./components/posts/post-create.vue"));

@@ -31,6 +31,7 @@ return array(
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Http\\Requests\\CreateCategory' => $baseDir . '/app/Http/Requests/CreateCategory.php',
     'App\\Http\\Requests\\CreatePage' => $baseDir . '/app/Http/Requests/CreatePage.php',
+    'App\\Http\\Requests\\CreatePost' => $baseDir . '/app/Http/Requests/CreatePost.php',
     'App\\Http\\Requests\\CreateSiteConfig' => $baseDir . '/app/Http/Requests/CreateSiteConfig.php',
     'App\\Models\\Category' => $baseDir . '/app/Models/Categories/Category.php',
     'App\\Models\\ModelCategory' => $baseDir . '/app/Models/Categories/ModelCategory.php',

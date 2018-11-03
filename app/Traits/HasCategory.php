@@ -1,17 +1,17 @@
 <?php 
 namespace App\Traits;
 
-use App\Models\{ModelCategory,Category};
+use App\Models\{ModelCategory};
 trait HasCategory
 {
-	public function addCategory(Category $category, $primary = false)
+	public function addCategory($category, $primary = false)
 	{
         $model = $this->getMorphClass();
         return ModelCategory::create([
             'model_type'   => $model,
             'model_id'     => $this->id,
             'primary'      => $primary,
-            'category_id'  => $category->id,
+            'category_id'  => $category,
         ]);
     }
     
