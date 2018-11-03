@@ -25,6 +25,7 @@ Vue.component('pages-create', require('./components/pages/page-create.vue'));
 Vue.component('datatable',require("./components/datatable.vue"));
 Vue.component('vue-categories',require("./components/vue-categories.vue"));
 Vue.component('post-create',require("./components/posts/post-create.vue"));
+Vue.component('post-view',require("./components/posts/post-view.vue"));
 
 
 

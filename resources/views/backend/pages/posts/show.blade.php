@@ -1,5 +1,5 @@
 @extends('backend.layouts.admin')
-@section('title','Criar postagem')
+@section('title','Editar postagem')
 
 @section('breadcrumb')
 <div class="page-header row no-gutters py-4">
@@ -10,16 +10,17 @@
 			</span>
 		</a>
 		<h3 class="page-title">
-			Criar postagem
+			Editar postagem
 		</h3>
 	</div>
 </div>
 @endsection
 
 @section('body')  
-	<post-create 
+	<post-view
+		:_post="{{ $post }}" 
 		:_categories="{{ $categories }}" 
 		_route_store_categories="{{ route('categorias.store') }}"
 	>
-	</post-create>
+	</post-view>
 @endsection

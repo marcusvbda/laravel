@@ -67,7 +67,7 @@
 								@endif
 							</td>
 							<td>
-								<a href="{{ route('paginas.show', [ 'slug' => $row->slug]) }}">
+								<a href="{{ route('posts.show', [ 'slug' => $row->slug]) }}">
 									<button type="button" class="btn btn-sm btn-outline-royal-blue">
 										<i class="fas fa-eye"></i> Visualizar
 									</button>
@@ -80,6 +80,9 @@
 
 			</div>
 		</div>
+		<div class="float-right">
+            {{ $posts->appends(request()->query())->links() }}
+        </div>
 	</div>
 </div>
 @endsection

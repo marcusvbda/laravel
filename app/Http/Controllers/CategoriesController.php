@@ -16,7 +16,7 @@ class CategoriesController extends Controller
         {
             $data = $request->all();
             Category::create($data);
-            $categories = Category::with('subCategories')->get();
+            $categories = Category::OnlyParent()->with('subCategories')->get();
             return response()->json(["success"=>true,"message"=>null,"data"=> $categories ]);
         }
         catch(\Exception $e)

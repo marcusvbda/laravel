@@ -21,10 +21,9 @@ class Category extends Model
 		'parent'
 	];
 
-
-	protected static function boot(){
-		parent::boot();
-		static::addGlobalScope(new OnlyParentScope);
+	public function scopeOnlyParent($query)
+	{
+		return $query->where('parent', null);
 	}
 
 	public function sluggable(){

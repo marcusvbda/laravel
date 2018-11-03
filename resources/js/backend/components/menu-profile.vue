@@ -2,11 +2,14 @@
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
             <img class="user-avatar rounded-circle mr-2" :src="image" alt="User Avatar">
-            <span class="d-none d-md-inline-block">Sierra Brooks</span>
+            <span class="d-none d-md-inline-block">{{ username }}</span>
         </a>
         <div class="dropdown-menu dropdown-menu-small">
             <a class="dropdown-item" target="_blank" href="/">
                 <i class="material-icons">vertical_split</i> Acessar o site
+            </a>
+            <a class="dropdown-item" href="/admin/posts/criar">
+                <i class="material-icons">note_add</i> Criar novo post
             </a>
             <a class="dropdown-item" href="user-profile-lite.html">
                 <i class="material-icons"></i> Profile</a>
@@ -20,7 +23,7 @@
     <script>
         export default 
         {
-            props: ['routelogout','image','siteRoute'],
+            props: ['routelogout','image','siteRoute','username'],
             data: function () {
               return {
                 _routelogout: this.routelogout,

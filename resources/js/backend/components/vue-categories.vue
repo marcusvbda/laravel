@@ -88,6 +88,11 @@
 		},
 		methods:
 		{
+			set(array,primary)
+			{
+				this.categories = array;
+				this.primary = primary;
+			},
 			value()
 			{
 				return {

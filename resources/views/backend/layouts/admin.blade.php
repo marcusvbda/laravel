@@ -119,7 +119,8 @@ $site = SiteController::get();
                                     </li>
                                     <menu-profile 
                                     routelogout="{{  route('logout')  }}" 
-                                    image='http://127.0.0.1:8000/images/avatars/0.jpg'>
+                                    username="{{ Auth::user()->email }}"
+                                    image="{{asset('images/avatars/0.jpg')}}">
                                 </menu-profile>
                             </ul>
                             <nav class="nav">

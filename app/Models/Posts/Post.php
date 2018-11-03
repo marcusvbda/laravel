@@ -14,7 +14,7 @@ class Post extends Model
 	use SoftDeletes,HasCategory,Sluggable,SluggableScopeHelpers;
 
 	protected $table = 'Posts';
-	protected $appends = ['meta','formated_created_at'];
+	protected $appends = ['meta','formated_created_at','categories_id','primary_category'];
 
 	protected $fillable = [
 		'name',
@@ -44,7 +44,7 @@ class Post extends Model
 	public function categories()
 	{
 		$model = $this->getMorphClass();
-		return $this->belongsToMany(Category::class,"model_categories","model_id")->where("model_id",$model)->select("categories.*","model_categories.primary");
+		return $this->belongsToMany(Category::class,"model_categories","model_id")->where("model_type",$model)->where("model_id",$this->id)->select("categories.*","model_categories.primary");
 	}
 
 	public function getFormatedCreatedAtAttribute()
@@ -62,6 +62,16 @@ class Post extends Model
 		return $string;
 	}
 
+	public function getCategoriesIdAttribute()
+	{
+		$ids = $this->categories->pluck("id")->toArray();
+		return $ids;
+	}
+
+	public function getPrimaryCategoryAttribute()
+	{
+		return $this->getPrimaryCategory(); 
+	}
 
 
 }

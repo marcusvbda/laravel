@@ -31,10 +31,14 @@
     },
     methods:
     {
-     value()
-     {
-      return $(this.$refs.editor).summernote('code');
+      set(value)
+      {
+        return $(this.$refs.editor).summernote('code',value);
+      },
+      value()
+      {
+        return $(this.$refs.editor).summernote('code');
+      }
     }
   }
-}
 </script>
