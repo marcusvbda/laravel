@@ -1,5 +1,6 @@
 <template>
 	<div class="row">
+		<i  v-show="loading" class="fa fa-spinner fa-spin"></i>
 		<div class="col-8">
 			<!-- Add New Post Form -->
 			<div class="card card-small mb-3">
@@ -21,7 +22,7 @@
 					</form>
 				</div>
 			</div>
-			<!-- / Add New Post Form -->
+			
 		</div>
 		<div class="col-4">
 

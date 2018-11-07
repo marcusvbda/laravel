@@ -136,6 +136,7 @@ $site = SiteController::get();
                         @yield('breadcrumb')
                         <!-- End Page Header -->
                         <!-- Small Stats Blocks -->
+
                         @yield('body')
                     </div>
                     <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
@@ -148,4 +149,5 @@ $site = SiteController::get();
         </div>
     </body>
     @endsection
+    
 

@@ -22,11 +22,18 @@
         <square-overview title="Páginas" value="{{ $pagesCount }}" route="{{ route('paginas.index') }}"></square-overview>
     </div>
 </div>
+
+<vue-gallery
+    ref="gallery"
+>
+</vue-gallery>
+
+
 @endsection
  
 
 @section("scripts")
 <script>
-    $("#menuDashboard").addClass("active");
+    app.$refs.gallery.show();
 </script>
 @endsection

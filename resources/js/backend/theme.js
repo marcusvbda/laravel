@@ -9,13 +9,15 @@ import VueToastr2 from 'vue-toastr-2'
 import VueResource from 'vue-resource'
 import 'vue-toastr-2/dist/vue-toastr-2.min.css'
 import VueSweetalert2 from 'vue-sweetalert2';
-import BootstrapVue from 'bootstrap-vue'
+import BootstrapVue from 'bootstrap-vue';
+import vue2Dropzone from 'vue2-dropzone';
+
 
 Vue.use(BootstrapVue);
-window.toastr = require('toastr')
-Vue.use(VueToastr2)
-// Vue.use(VueSweetalert2);
+window.toastr = require('toastr');
+Vue.use(VueToastr2);
 Vue.use(VueResource);
+Vue.component('vue-dropzone',vue2Dropzone);
 Vue.component('square-overview', require('./components/dashboard/quadro-overview.vue'));
 Vue.component('menu-profile', require('./components/menu-profile.vue'));
 Vue.component('site-edit', require('./components/site/site-edit.vue'));
@@ -26,6 +28,8 @@ Vue.component('datatable',require("./components/datatable.vue"));
 Vue.component('vue-categories',require("./components/vue-categories.vue"));
 Vue.component('post-create',require("./components/posts/post-create.vue"));
 Vue.component('post-view',require("./components/posts/post-view.vue"));
+Vue.component('vue-gallery',require("./components/gallery/gallery.vue"));
+
 
 
 
