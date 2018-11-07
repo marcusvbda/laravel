@@ -45408,7 +45408,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	props: ["_categories", "_store_route"],
+	props: ["_categories"],
 	data: function data() {
 		return {
 			categories: [],
@@ -45422,6 +45422,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		};
 	},
 	methods: {
+		changeSelectedCategory: function changeSelectedCategory(id) {
+			if (this.categories.includes(id) && this.primary == id) {
+				this.primary = null;
+			}
+		},
 		set: function set(array, primary) {
 			this.categories = array;
 			this.primary = primary;
@@ -45438,7 +45443,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				return this.$toastr.error("Selecione a categoria pai");
 			}
 
-			this.$http.post(this._store_route, this.newCategory).then(function (response) {
+			this.$http.post("/admin/categorias/criar", this.newCategory).then(function (response) {
 				response = response.data;
 				if (!response.success) {
 					return this.$toastr.error(response.message);
@@ -45496,7 +45501,12 @@ var render = function() {
                             "b-form-checkbox",
                             {
                               staticClass: "item",
-                              attrs: { value: category.id }
+                              attrs: { value: category.id },
+                              on: {
+                                change: function($event) {
+                                  _vm.changeSelectedCategory(category.id)
+                                }
+                              }
                             },
                             [_vm._v(_vm._s(category.name))]
                           ),
@@ -45534,7 +45544,14 @@ var render = function() {
                           [
                             _c(
                               "b-form-checkbox",
-                              { attrs: { value: sub.id } },
+                              {
+                                attrs: { value: sub.id },
+                                on: {
+                                  change: function($event) {
+                                    _vm.changeSelectedCategory(sub.id)
+                                  }
+                                }
+                              },
                               [_vm._v(_vm._s(sub.name))]
                             ),
                             _vm._v(" "),
@@ -45881,9 +45898,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	props: ["_categories", "_route_store_categories"],
+	props: ["_categories"],
 	data: function data() {
 		return {
 			post: {
@@ -46090,10 +46109,7 @@ var render = function() {
         _vm._v(" "),
         _c("vue-categories", {
           ref: "categories",
-          attrs: {
-            _categories: _vm._categories,
-            _store_route: _vm._route_store_categories
-          }
+          attrs: { _categories: _vm._categories }
         })
       ],
       1
@@ -46247,9 +46263,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	props: ["_categories", "_post", "_route_store_categories"],
+	props: ["_categories", "_post"],
 	data: function data() {
 		return {
 			post: this._post
@@ -46457,10 +46475,7 @@ var render = function() {
         _vm._v(" "),
         _c("vue-categories", {
           ref: "categories",
-          attrs: {
-            _categories: _vm._categories,
-            _store_route: _vm._route_store_categories
-          }
+          attrs: { _categories: _vm._categories }
         })
       ],
       1

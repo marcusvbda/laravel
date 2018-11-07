@@ -18,7 +18,6 @@
 @endsection
 
 @section('body')  
-
 <div class="row">
 	<div class="col-12">
 
@@ -27,6 +26,7 @@
 			<div class="card-header border-bottom pb-0">
 				<form>
 					<div class="row">
+						
 						<div class="col-12">
 							<div class="input-group mb-3">
 								<input type="text" class="form-control" placeholder="Seu filtro aqui..." value="{{ $filter }}" name="filter">
@@ -67,11 +67,18 @@
 								@endif
 							</td>
 							<td>
-								<a href="{{ route('posts.show', [ 'slug' => $row->slug]) }}">
-									<button type="button" class="btn btn-sm btn-outline-royal-blue">
-										<i class="fas fa-eye"></i> Visualizar
-									</button>
-								</a>
+								<div class="btn-group btn-group-sm" role="group" aria-label="Table row actions">
+									<a href="{{ route('posts.show', [ 'slug' => $row->slug]) }}" title="Editar / Visualizar">
+										<button type="button" class="btn btn-white">
+											<i class="fas fa-edit"></i>
+										</button>
+									</a>
+									<a href="#" title="Clonar">
+										<button type="button" class="btn btn-white">
+											<i class="fas fa-clone"></i>
+										</button>
+									</a>
+								</div>
 							</td>
 						</tr>
 						@endforeach
@@ -81,8 +88,8 @@
 			</div>
 		</div>
 		<div class="float-right">
-            {{ $posts->appends(request()->query())->links() }}
-        </div>
+			{{ $posts->appends(request()->query())->links() }}
+		</div>
 	</div>
 </div>
 @endsection

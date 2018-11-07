@@ -58,7 +58,9 @@
 				</div>
 			</div>
 
-			<vue-categories ref="categories" :_categories="_categories" v-bind:_store_route="_route_store_categories"></vue-categories>
+			<vue-categories ref="categories" 
+				:_categories="_categories">	
+			</vue-categories>
 
 
 		</div>
@@ -68,7 +70,7 @@
 <script>
 	export default 
 	{
-		props: ["_categories","_post","_route_store_categories"],
+		props: ["_categories","_post"],
 		data: function () {
 			return {
 				post : this._post

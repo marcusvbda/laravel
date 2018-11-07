@@ -64,11 +64,18 @@
                                 @endif
                             </td>
                             <td>
-                                <a href="{{ route('paginas.show', [ 'slug' => $row->slug]) }}">
-                                    <button type="button" class="btn btn-sm btn-outline-royal-blue">
-                                        <i class="fas fa-eye"></i> Visualizar
-                                    </button>
-                                </a>
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Table row actions">
+                                    <a href="{{ route('paginas.show', [ 'slug' => $row->slug]) }}" title="Editar / Visualizar">
+                                        <button type="button" class="btn btn-white">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </a>
+                                    <a href="#" title="Clonar">
+                                        <button type="button" class="btn btn-white">
+                                            <i class="fas fa-clone"></i>
+                                        </button>
+                                    </a>
+                                </div>
                             </td>
                         </tr>
                         @endforeach

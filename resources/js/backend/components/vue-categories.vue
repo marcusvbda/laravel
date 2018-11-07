@@ -18,12 +18,12 @@
 						<b-form-checkbox-group ref="categories" v-model="categories">
 							<template v-for="(category,i) in categoryList">
 								<p class="mb-1">
-									<b-form-checkbox class="item" :value="category.id">{{ category.name }}</b-form-checkbox>
+									<b-form-checkbox class="item" :value="category.id" @change="changeSelectedCategory(category.id)">{{ category.name }}</b-form-checkbox>
 									<a class="float-right link" v-if="(categories.includes(category.id)&&(primary!=category.id))" @click="primary=category.id"> Tornar primario</a>
 									<b class="float-right link" v-if="(categories.includes(category.id)&&(primary==category.id))">Primário</b>
 								</p>
 								<p v-for="sub in category.sub_categories" class="mb-1 pl-4">
-									<b-form-checkbox  :value="sub.id">{{ sub.name }}</b-form-checkbox>
+									<b-form-checkbox  :value="sub.id" @change="changeSelectedCategory(sub.id)">{{ sub.name }}</b-form-checkbox>
 									<a class="float-right link" v-if="(categories.includes(sub.id)&&(primary!=sub.id))" @click="primary=sub.id"> Tornar primario</a>
 									<b class="float-right link" v-if="(categories.includes(sub.id)&&(primary==sub.id))">Primário</b>
 								</p>
@@ -72,7 +72,7 @@
 <script>
 	export default 
 	{
-		props: ["_categories","_store_route"],
+		props: ["_categories"],
 		data: function () {
 			return {
 				categories: [],
@@ -88,6 +88,13 @@
 		},
 		methods:
 		{
+			changeSelectedCategory(id)
+			{
+				if((this.categories.includes(id)) && (this.primary == id))
+				{
+					this.primary = null;
+				}
+			},
 			set(array,primary)
 			{
 				this.categories = array;
@@ -108,7 +115,7 @@
 					return this.$toastr.error("Selecione a categoria pai");
 				}
 
-				this.$http.post(this._store_route,this.newCategory)
+				this.$http.post("/admin/categorias/criar",this.newCategory)
 				.then(function(response)
 				{
 					response = response.data;

@@ -1,5 +1,5 @@
 <?php
-  
+
 
 Route::get('/phpinfo',function()
 {
@@ -14,11 +14,11 @@ Route::group(['prefix' => 'admin'], function ()
   require("partials/auth.php");
   Route::group(['middleware' => 'auth'], function()
   {
-      require("partials/site.php");
-      Route::get('/', 'DashboardController@index')->name('dashboard');
-      require("partials/paginas.php");
-      require("partials/postagens.php");
-      require("partials/categorias.php");
+    Route::get('/', 'DashboardController@index')->name('dashboard');
+    require("partials/site.php");
+    require("partials/paginas.php");
+    require("partials/postagens.php");
+    require("partials/categorias.php");
   });
 });
 

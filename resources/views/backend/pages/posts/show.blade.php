@@ -19,8 +19,7 @@
 @section('body')  
 	<post-view
 		:_post="{{ $post }}" 
-		:_categories="{{ $categories }}" 
-		_route_store_categories="{{ route('categorias.store') }}"
+		:_categories="{{ $categories }}"
 	>
 	</post-view>
 @endsection
