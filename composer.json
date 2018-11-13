@@ -20,9 +20,9 @@
         "intervention/image": "^2.4",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
+        "marcusvbda/menu": "*",
         "marcusvbda/uploader": "dev-master",
-        "spatie/laravel-permission": "^2.21",
-        "marcusvbda/menu": "*"
+        "spatie/laravel-permission": "^2.21"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

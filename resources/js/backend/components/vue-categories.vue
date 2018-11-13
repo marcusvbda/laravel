@@ -2,7 +2,7 @@
 .listCategories
 {
 	max-height: 200px;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 </style>
 <template>

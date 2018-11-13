@@ -1,5 +1,4 @@
 <?php
-use marcusvbda\menu\Menu;
 use App\Http\Controllers\SiteController;
 $site = SiteController::get();
 ?>
@@ -12,69 +11,24 @@ $site = SiteController::get();
       <div class="row">
         <!-- Main Sidebar -->
 
-        <aside class="main-sidebar col-12 col-md-3 col-lg-2 px-0">
-            <div class="main-navbar">
-                <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
-                    <a class="navbar-brand w-100 mr-0" href="{{ route('dashboard') }}" style="line-height: 25px;">
-                        <div class="d-table m-auto">
-                            <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="{{ url('/') }}/images/logo.png" alt="Dashboard">
-                            <span class="d-none d-md-inline ml-1">{{ $site->title }}</span>
-                        </div>
-                    </a>
-                    <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
-                        <i class="material-icons">&#xE5C4;</i>
-                    </a>
-                </nav>
-            </div>
-            <form action="#" class="main-sidebar__search w-100 border-right d-sm-flex d-md-none d-lg-none">
-                <div class="input-group input-group-seamless ml-3">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                            <i class="fas fa-search"></i>
-                        </div>
-                    </div>
-                    <input class="navbar-search form-control" type="text" placeholder="Procurando algo ?" aria-label="Search"> </div>
-                </form>
-                <div class="nav-wrapper">
-                    <h6 class="main-sidebar__nav-title">Infomativo</h6>
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link {{Menu::active("dashboard")}}" href="{{ route('dashboard') }}">
-                                <i class="fas fa-tachometer-alt"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <h6 class="main-sidebar__nav-title">Blog</h6>
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link {{Menu::active("posts")}}" href="{{ route('posts.index') }}">
-                                <i class="material-icons">note_add</i>
-                                <span>Postagens</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <h6 class="main-sidebar__nav-title">Template</h6>
-                    <ul class="nav flex-column">
-
-                        <li class="nav-item">
-                            <a class="nav-link {{Menu::active("paginas")}}" href="{{ route('paginas.index') }}">
-                                <i class="fas fa-bolt"></i>
-                                <span>Páginas do site</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link {{Menu::active("site")}}" href="{{ route('site.index') }}">
-                                <i class="material-icons">edit</i>
-                                <span>Edição do site</span>
-                            </a>
-                        </li>
-
-                    </ul>
+            <aside class="main-sidebar col-12 col-md-3 col-lg-2 px-0">
+                <div class="main-navbar">
+                    <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
+                        <a class="navbar-brand w-100 mr-0" href="{{ route('dashboard') }}" style="line-height: 25px;">
+                            <div class="d-table m-auto">
+                                <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="{{ url('/') }}/images/logo.png" alt="Dashboard">
+                                <span class="d-none d-md-inline ml-1">{{ $site->title }}</span>
+                            </div>
+                        </a>
+                        <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
+                            <i class="material-icons">&#xE5C4;</i>
+                        </a>
+                    </nav>
                 </div>
-            </aside> 
-
+                {{-- menus --}}
+                @include('backend.layouts.menu_principal')
+                {{-- menus --}}
+            </aside>
             <!-- End Main Sidebar -->
             <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
                 <div class="main-navbar sticky-top bg-white">
@@ -116,8 +70,8 @@ $site = SiteController::get();
                                             </a>
                                             <a class="dropdown-item notification__all text-center" href="#"> View all Notifications </a>
                                         </div>
-                                    </li>
-                                    <menu-profile 
+                                </li>
+                                <menu-profile 
                                     routelogout="{{  route('logout')  }}" 
                                     username="{{ Auth::user()->email }}"
                                     image="{{asset('images/avatars/0.jpg')}}">

@@ -15,7 +15,7 @@
 													Imagens da categoria 1
 												</b-tab>
 												<b-tab title="Categoria 2">
-													Imagens da categoria 2
+													Imagens da categoria 2 teste
 												</b-tab>
 												<b-tab title="Categoria 3">
 													Imagens da categoria 3

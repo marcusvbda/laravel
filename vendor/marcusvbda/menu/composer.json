@@ -1,0 +1,20 @@
+{
+    "name": "marcusvbda/menu",
+    "description": "",
+    "type": "library",
+    "require-dev": {
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marcus Vinicius Bassalobre de Assis",
+            "email": "vinicius.bda@icloud.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "marcusvbda\\menu\\": "src/"
+        }
+    },
+    "require": {}
+}

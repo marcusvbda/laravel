@@ -34,6 +34,6 @@
 
 @section("scripts")
 <script>
-    app.$refs.gallery.show();
+    // app.$refs.gallery.show();
 </script>
 @endsection

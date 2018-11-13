@@ -33,6 +33,7 @@
 				"lengthChange": ((this._changePerPage) ? true : false),
 				"paging":  ((this._paging) ? true : false),
 				"info":  ((this._info) ? true : false),
+				"scrollX": true,
 				responsive: true,
 				destroy: true,
 				columnDefs: [

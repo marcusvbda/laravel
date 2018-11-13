@@ -15,6 +15,7 @@ Route::group(['prefix' => 'admin'], function ()
   Route::group(['middleware' => 'auth'], function()
   {
     Route::get('/', 'DashboardController@index')->name('dashboard');
+    require("partials/usuarios.php");
     require("partials/site.php");
     require("partials/paginas.php");
     require("partials/postagens.php");
