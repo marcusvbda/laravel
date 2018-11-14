@@ -22,7 +22,7 @@
 	</style>
 <script>
 	export default{
-		props:["_sort","_searching","_perPage","_changePerPage","_orderCol","_orderType","_table_class","_thead_class","_paging","_info"],
+		props:["_sort","_searching","_perPage","_change_per_page","_order_col","_order_type","_table_class","_thead_class","_paging","_info"],
 		mounted()
 		{
 			$(this.$refs.table).DataTable({
@@ -30,7 +30,7 @@
 				"bSort": ((this._sort) ? this._sort : true),
 				"searching": ((this._searching) ? this._searching : false),
 				"pageLength": ((this._perPage) ? this._perPage : 10),
-				"lengthChange": ((this._changePerPage) ? true : false),
+				"lengthChange": ((this._change_per_page) ? true : false),
 				"paging":  ((this._paging) ? true : false),
 				"info":  ((this._info) ? true : false),
 				"scrollX": true,
@@ -39,7 +39,7 @@
 				columnDefs: [
                 	{ targets: 'no-sort', orderable: false }
                 ],
-				"order": [ ((this._orderCol) ? this._orderCol : 0), ((this._orderType) ? this._orderType : "desc")],
+				"order": [ ((this._order_col) ? this._order_col : 0), ((this._order_type) ? this._order_type : "desc")],
 				"oLanguage": {
 					"sEmptyTable": "Nenhum registro encontrado",
 					"sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",

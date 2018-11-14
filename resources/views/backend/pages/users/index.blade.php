@@ -42,11 +42,11 @@
                 </form>
             </div>
             <div class="card-body p-0 pb-0 text-center">
-                <Datatable _table_class="table" _thead_class="bg-light">
+                <Datatable _table_class="table" _thead_class="bg-light" _order_col="1">
                     <template slot="thead">
                         <tr>
+                            <td class="no-sort text-center" width="1%" ></td>
                             <td>Nome</td>
-                            <td class="no-sort text-center" ></td>
                             <td>Email</td>
                             <td>Classe</td>
                             <td class="no-sort" width="1%"></td>
@@ -55,13 +55,13 @@
                     <template slot="tbody">
                         @foreach($users as $row)
                         <tr>
-                            <td>{{ $row->name }}</td>
-                            <td> imagem </td>
-                            <td>{{ $row->email }}</td>
-                            <td> classe </td>
+                            <td><img width="40px" class="rounded-circle" src="{{ $row->profile }}"></td>
+                            <td class="pt-3">{{ $row->name }}</td>
+                            <td class="pt-3">{{ $row->email }}</td>
+                            <td class="pt-3"> classe </td>
                             <td>
                                 <div class="btn-group btn-group-sm" role="group" aria-label="Table row actions">
-                                    <a href="#" title="Editar / Visualizar">
+                                    <a href="{{ route('usuarios.show',['code'=>$row->code])  }}" title="Editar / Visualizar">
                                         <button type="button" class="btn btn-white">
                                             <i class="fas fa-edit"></i>
                                         </button>

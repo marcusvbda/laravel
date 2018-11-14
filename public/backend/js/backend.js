@@ -42375,17 +42375,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['routelogout', 'image', 'siteRoute', 'username'],
+    props: ['image', 'username', 'profile_route'],
     data: function data() {
-        return {
-            _routelogout: this.routelogout,
-            _siteRoute: this.siteRoute
-        };
+        return {};
     },
     methods: {
         logout: function logout() {
             this.$swal.confirm("Confirmação", "Deseja mesmo efetuar o logout? ", "warning", function () {
-                return window.location.href = this.routelogout;
+                return window.location.href = "/admin/logout";
             }.bind(this));
         }
     }
@@ -42429,7 +42426,14 @@ var render = function() {
       _vm._v(" "),
       _vm._m(1),
       _vm._v(" "),
-      _vm._m(2),
+      _c(
+        "a",
+        { staticClass: "dropdown-item", attrs: { href: _vm.profile_route } },
+        [
+          _c("i", { staticClass: "material-icons" }, [_vm._v("")]),
+          _vm._v(" Profile")
+        ]
+      ),
       _vm._v(" "),
       _c("div", { staticClass: "dropdown-divider" }),
       _vm._v(" "),
@@ -42468,22 +42472,6 @@ var staticRenderFns = [
       [
         _c("i", { staticClass: "material-icons" }, [_vm._v("note_add")]),
         _vm._v(" Criar novo post\n        ")
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "dropdown-item",
-        attrs: { href: "user-profile-lite.html" }
-      },
-      [
-        _c("i", { staticClass: "material-icons" }, [_vm._v("")]),
-        _vm._v(" Profile")
       ]
     )
   }
@@ -44066,21 +44054,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	props: ["_sort", "_searching", "_perPage", "_changePerPage", "_orderCol", "_orderType", "_table_class", "_thead_class", "_paging", "_info"],
+	props: ["_sort", "_searching", "_perPage", "_change_per_page", "_order_col", "_order_type", "_table_class", "_thead_class", "_paging", "_info"],
 	mounted: function mounted() {
 		$(this.$refs.table).DataTable({
 
 			"bSort": this._sort ? this._sort : true,
 			"searching": this._searching ? this._searching : false,
 			"pageLength": this._perPage ? this._perPage : 10,
-			"lengthChange": this._changePerPage ? true : false,
+			"lengthChange": this._change_per_page ? true : false,
 			"paging": this._paging ? true : false,
 			"info": this._info ? true : false,
 			"scrollX": true,
 			responsive: true,
 			destroy: true,
 			columnDefs: [{ targets: 'no-sort', orderable: false }],
-			"order": [this._orderCol ? this._orderCol : 0, this._orderType ? this._orderType : "desc"],
+			"order": [this._order_col ? this._order_col : 0, this._order_type ? this._order_type : "desc"],
 			"oLanguage": {
 				"sEmptyTable": "Nenhum registro encontrado",
 				"sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",

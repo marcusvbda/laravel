@@ -11,7 +11,7 @@
             <a class="dropdown-item" href="/admin/posts/criar">
                 <i class="material-icons">note_add</i> Criar novo post
             </a>
-            <a class="dropdown-item" href="user-profile-lite.html">
+            <a class="dropdown-item" :href="profile_route">
                 <i class="material-icons"></i> Profile</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item text-danger" @click="logout">
@@ -23,11 +23,9 @@
     <script>
         export default 
         {
-            props: ['routelogout','image','siteRoute','username'],
+            props: ['image','username','profile_route'],
             data: function () {
               return {
-                _routelogout: this.routelogout,
-                _siteRoute: this.siteRoute,
             }
         },
         methods:
@@ -36,7 +34,7 @@
             {
                 this.$swal.confirm("Confirmação","Deseja mesmo efetuar o logout? ","warning",function()
                 {
-                    return window.location.href = this.routelogout;
+                    return window.location.href ="/admin/logout";
                 }.bind(this));
             }
         }
