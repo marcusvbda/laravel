@@ -1,5 +1,5 @@
 @extends('backend.layouts.admin')
-@section('title','Conto do usuários')
+@section('title','Conta do usuários')
 
 @section('breadcrumb')
 <div class="page-header row no-gutters py-4">
