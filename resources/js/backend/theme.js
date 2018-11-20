@@ -11,6 +11,11 @@ import 'vue-toastr-2/dist/vue-toastr-2.min.css'
 import VueSweetalert2 from 'vue-sweetalert2';
 import BootstrapVue from 'bootstrap-vue';
 import vue2Dropzone from 'vue2-dropzone';
+import { Upload } from 'element-ui';
+import lang from 'element-ui/lib/locale/lang/pt-BR';
+import locale from 'element-ui/lib/locale';
+locale.use(lang);
+Vue.use(Upload);
 
 
 Vue.use(BootstrapVue);
@@ -29,6 +34,7 @@ Vue.component('vue-categories',require("./components/vue-categories.vue"));
 Vue.component('post-create',require("./components/posts/post-create.vue"));
 Vue.component('post-view',require("./components/posts/post-view.vue"));
 Vue.component('vue-gallery',require("./components/gallery/gallery.vue"));
+Vue.component('user-edit',require("./components/users/user-edit.vue"));
 
 
 
@@ -91,6 +97,7 @@ Vue.mixin({
 	methods:{
 		makeError(error)
 		{
+			console.log(error);
 			var errors = error.body.errors;
 			for(var row in errors)
 			{

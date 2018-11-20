@@ -3,8 +3,8 @@
     "/css/app.css": "/css/app.css",
     "/backend/css/backend.css": "/backend/css/backend.css",
     "/frontend/css/frontend.css": "/frontend/css/frontend.css",
-    "/js/app.js": "/js/app.js",
     "/js/vendor.js": "/js/vendor.js",
+    "/js/app.js": "/js/app.js",
     "/js/frontend.js": "/js/frontend.js",
     "/js/manifest.js": "/js/manifest.js"
 }

@@ -20,6 +20,7 @@ const mix = require('laravel-mix');
  .extract(
   [
     'jquery',
+    "element-ui",
     'vue',
     'datatables.net/js/jquery.dataTables.js',
     'datatables.net-bs4/js/dataTables.bootstrap4.js',
