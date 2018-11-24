@@ -43,7 +43,7 @@ class usersController extends Controller
     {
         try {
             $data = $request->file('file');
-            $file = Uploader::upload($data, uniqid(), '');
+            $file = Uploader::upload($data, "user_profile_".$user->id, '');
             Uploader::makeThumbnail($file);
 
             return response()->json(['success' => true, 'message' => null, 'data' => $file]);

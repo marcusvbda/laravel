@@ -1,0 +1,23 @@
+{
+    "name": "marcusvbda/cms",
+    "description": "cms",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "cviebrock/eloquent-sluggable": "^4.6",
+        "lecturize/laravel-tags": "dev-master",
+        "vinkla/hashids": "^5.1"
+    },
+    "authors": [
+        {
+            "name": "Marcus Vinicius Bassalobre de Assis",
+            "email": "vinicius.bda@icloud.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "marcusvbda\\commonModels\\": "src/"
+        }
+    },
+    "require": {}
+}

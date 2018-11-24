@@ -11,6 +11,13 @@
             "options": {
                 "symlink": true
             }
+        },
+        {
+            "type": "path",
+            "url": "packages/marcusvbda/cms",
+            "options": {
+                "symlink": true
+            }
         }
     ],
     "require": {
@@ -21,6 +28,7 @@
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
         "marcusvbda/menu": "*",
+        "marcusvbda/cms": "*",
         "marcusvbda/uploader": "dev-master",
         "spatie/laravel-permission": "^2.21",
         "vinkla/hashids": "^5.1"
