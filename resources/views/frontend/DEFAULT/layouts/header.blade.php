@@ -27,7 +27,7 @@
 
 <body>
   @if(Auth::check())
-  @include("frontend.layouts.navAuth")
+  @include("frontend.DEFAULT.layouts.navAuth")
   @endif
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">

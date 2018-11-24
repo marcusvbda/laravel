@@ -8,13 +8,13 @@ class SiteConfig extends Migration
 {
     public function up()
     {
-        Schema::create('site_config', function (Blueprint $table) 
-        {
+        Schema::create('site_config', function (Blueprint $table) {
             $table->charset = 'utf8';
             $table->collation = 'utf8_unicode_ci';
             $table->increments('id');
             $table->string('title');
-            $table->string('menus')->default("[]");
+            $table->string('theme')->default('DEFAULT');
+            $table->string('menus')->default('[]');
             $table->timestamps();
         });
     }

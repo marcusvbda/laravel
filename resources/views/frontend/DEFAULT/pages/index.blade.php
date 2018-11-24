@@ -1,4 +1,4 @@
-@extends('frontend.layouts.theme') 
+@extends('frontend.DEFAULT.layouts.theme') 
 @section('content')
 <!-- Masthead -->
 <header class="masthead text-white text-center">
