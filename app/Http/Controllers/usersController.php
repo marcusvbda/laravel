@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use marcusvbda\uploader\Controllers\UploaderController as Uploader;
 use App\Models\{User};
 use App\Services\AlertService;
+use Spatie\Permission\Models\Role;
 
 class usersController extends Controller
 {
@@ -23,14 +24,17 @@ class usersController extends Controller
 
     public function show(User $user)
     {
-        return view('backend.pages.users.show', compact('user'));
+        $roles = Role::get();
+
+        return view('backend.pages.users.show', compact('user', 'roles'));
     }
 
     public function edit(User $user, Request $request)
     {
         try {
             $data = $request->all();
-            $user->update($data);
+            $user->update($data['user']);
+            $user->syncRoles($data['permissions']);
             $alert = AlertService::flash('success', '<strong>Pronto!</strong> Usuário foi atualizado com sucesso.');
 
             return response()->json(['success' => true, 'message' => null, 'data' => $data]);
@@ -43,7 +47,7 @@ class usersController extends Controller
     {
         try {
             $data = $request->file('file');
-            $file = Uploader::upload($data, "user_profile_".$user->id, '');
+            $file = Uploader::upload($data, 'user_profile_'.$user->id, '');
             Uploader::makeThumbnail($file);
 
             return response()->json(['success' => true, 'message' => null, 'data' => $file]);

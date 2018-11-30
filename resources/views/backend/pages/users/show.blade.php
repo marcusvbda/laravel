@@ -19,7 +19,10 @@
 @section('body')  
 <user-edit
 	csrf="{{csrf_token()}}"
-    :_user="{{$user}}">
+	:_user="{{$user}}"
+	:_roles="{{$roles}}"
+	:_permissions={{$user->getRoleNames()}}
+	>
 </user-edit>
 
 @endsection

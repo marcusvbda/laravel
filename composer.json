@@ -22,7 +22,7 @@
         "laravel/tinker": "^1.0",
         "marcusvbda/menu": "*",
         "marcusvbda/uploader": "dev-master",
-        "spatie/laravel-permission": "^2.21",
+        "spatie/laravel-permission": "^2.28",
         "vinkla/hashids": "^5.1"
     },
     "require-dev": {

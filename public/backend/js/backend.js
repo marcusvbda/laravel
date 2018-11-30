@@ -46206,11 +46206,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	props: ["_user", "csrf"],
+	props: ["_user", "csrf", "_roles", "_permissions"],
 	data: function data() {
 		return {
+			permissions: this._permissions,
 			user: this._user,
 			confirm_email: null,
 			old_email: this._user.email,
@@ -46218,7 +46223,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		};
 	},
 	mounted: function mounted() {
-		console.log(this.user);
+		// console.log(this._permissions);
 	},
 
 	methods: {
@@ -46227,7 +46232,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			this.user.profileImage = this.newImage;
 		},
 		submit: function submit() {
-			this.$http.put("", this.user).then(function (response) {
+			this.$http.put("", { user: this.user, permissions: this.permissions }).then(function (response) {
 				response = response.data;
 				if (!response.success) {
 					return this.$toastr.error(response.message);
@@ -46302,7 +46307,11 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("span", { staticClass: "text-muted d-block mb-2" }, [
-                  _vm._v("[ Nivel de acesso ]")
+                  _vm._v(
+                    "\r\n               " +
+                      _vm._s(_vm.user.email) +
+                      "\r\n            "
+                  )
                 ])
               ]
             )
@@ -46443,10 +46452,52 @@ var render = function() {
                   ])
                 : _vm._e(),
               _vm._v(" "),
-              _vm._m(1)
+              _c("div", { staticClass: "form-group row pr-3" }, [
+                _c(
+                  "label",
+                  { staticClass: "col-2 col-form-label text-right" },
+                  [_vm._v("Nível de acesso")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.permissions,
+                        expression: "permissions"
+                      }
+                    ],
+                    staticClass: "col-9 text-left form-control",
+                    attrs: { multiple: "" },
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.permissions = $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      }
+                    }
+                  },
+                  _vm._l(_vm._roles, function(role) {
+                    return _c("option", { attrs: { id: role.name } }, [
+                      _vm._v(_vm._s(role.name))
+                    ])
+                  })
+                )
+              ])
             ]),
             _vm._v(" "),
-            _vm._m(2)
+            _vm._m(1)
           ])
         ])
       ])
@@ -46460,18 +46511,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header border-bottom" }, [
       _c("h6", { staticClass: "m-0" }, [_vm._v("Detalhes da conta")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group row pr-3" }, [
-      _c("label", { staticClass: "col-2 col-form-label text-right" }, [
-        _vm._v("Nível de acesso")
-      ]),
-      _vm._v(" "),
-      _c("select", { staticClass: "col-9 text-left form-control" })
     ])
   },
   function() {

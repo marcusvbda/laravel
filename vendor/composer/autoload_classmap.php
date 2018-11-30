@@ -2994,6 +2994,7 @@ return array(
     'Spatie\\LaravelImageOptimizer\\ImageOptimizerServiceProvider' => $vendorDir . '/spatie/laravel-image-optimizer/src/ImageOptimizerServiceProvider.php',
     'Spatie\\LaravelImageOptimizer\\Middlewares\\OptimizeImages' => $vendorDir . '/spatie/laravel-image-optimizer/src/Middlewares/OptimizeImages.php',
     'Spatie\\LaravelImageOptimizer\\OptimizerChainFactory' => $vendorDir . '/spatie/laravel-image-optimizer/src/OptimizerChainFactory.php',
+    'Spatie\\Permission\\Commands\\CacheReset' => $vendorDir . '/spatie/laravel-permission/src/Commands/CacheReset.php',
     'Spatie\\Permission\\Commands\\CreatePermission' => $vendorDir . '/spatie/laravel-permission/src/Commands/CreatePermission.php',
     'Spatie\\Permission\\Commands\\CreateRole' => $vendorDir . '/spatie/laravel-permission/src/Commands/CreateRole.php',
     'Spatie\\Permission\\Contracts\\Permission' => $vendorDir . '/spatie/laravel-permission/src/Contracts/Permission.php',

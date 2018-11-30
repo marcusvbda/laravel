@@ -27,7 +27,9 @@
                 </el-upload>
             </div>
             <h4 class="mb-0">{{ user.name }}</h4>
-            <span class="text-muted d-block mb-2">[ Nivel de acesso ]</span>
+            <span class="text-muted d-block mb-2">
+               {{ user.email }}
+            </span>
             </div>
         </div>
         </div>
@@ -55,7 +57,9 @@
                     </div>
                     <div class="form-group row pr-3">
                         <label class="col-2 col-form-label text-right">Nível de acesso</label> 
-                        <select class="col-9 text-left form-control"></select>
+                        <select class="col-9 text-left form-control" v-model="permissions" multiple>
+                            <option v-for="role in _roles" :id="role.name" >{{ role.name }}</option>
+                        </select>
                     </div>
                 </div>
                 <div class="card-footer pt-3 text-right">
@@ -70,9 +74,10 @@
 <script>
 	export default 
 	{
-		props: ["_user","csrf"],
+		props: ["_user","csrf","_roles","_permissions"],
 		data: function () {
 			return {
+				permissions: this._permissions,
 				user:this._user,
                 confirm_email:null,
                 old_email:this._user.email,
@@ -81,7 +86,7 @@
 		},
 		mounted()
 		{
-			console.log(this.user);
+			// console.log(this._permissions);
 		},
 		methods:
 		{
@@ -91,7 +96,7 @@
             },
 			submit()
 			{
-				this.$http.put("",this.user)
+				this.$http.put("",{ user : this.user , permissions : this.permissions  })
 				.then(function(response)
 				{
 					response = response.data;
